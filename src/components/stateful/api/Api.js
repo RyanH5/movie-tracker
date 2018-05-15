@@ -6,7 +6,7 @@ export const fetchRecentMovies = async () => {
     const response = await fetch(url);
     // if data.error => throw new Error else return data.
     const recentMovies = await response.json();
-    return recentMovies;
+    return recentMovies.results;
   } catch (error) {
     throw new Error('Failed to fetch');
   }

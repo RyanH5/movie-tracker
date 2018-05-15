@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0733891-1aab-4e55-8f00-52b5c6620f48" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apikey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apikey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stateful/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/Api/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stateful/api/api.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/Api/Api.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateful/Api/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/api/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateful/Api/Api.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/api/Api.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stateful/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stateful/app/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/app/App.test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,36 +24,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.35086507">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/stateful/app/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="18" selection-start-line="9" selection-end-line="10" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Api.test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/stateful/Api/Api.test.js">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="10" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="App.test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/stateful/app/App.test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                <state relative-caret-position="85">
+                  <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -60,19 +52,32 @@
             </entry>
           </file>
           <file leaf-file-name="Api.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/stateful/Api/Api.js">
+            <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="30" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="apikey.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/apikey.js">
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Api.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                <state relative-caret-position="102">
+                  <caret line="6" column="41" selection-start-line="6" selection-end-line="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                  <caret line="18" column="18" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -84,6 +89,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -97,11 +103,15 @@
         <option value="$PROJECT_DIR$/src/components/stateful/api/api.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/stateful/api/api.test.js" />
-        <option value="$PROJECT_DIR$/src/components/stateful/app/App.js" />
         <option value="$PROJECT_DIR$/src/components/stateful/Api/Api.test.js" />
         <option value="$PROJECT_DIR$/src/components/stateful/app/App.test.js" />
-        <option value="$PROJECT_DIR$/src/components/stateful/Api/Api.js" />
         <option value="$PROJECT_DIR$/src/apikey.js" />
+        <option value="$PROJECT_DIR$/src/components/stateful/Api/Api.js" />
+        <option value="$PROJECT_DIR$/src/Components/Stateful/app/App.js" />
+        <option value="$PROJECT_DIR$/src/reducers/reducers.js" />
+        <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/helpers.js" />
+        <option value="$PROJECT_DIR$/src/components/stateful/app/App.js" />
       </list>
     </option>
   </component>
@@ -142,6 +152,11 @@
             <path>
               <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
               <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -163,7 +178,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="stateful" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="stateful" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -174,6 +197,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
@@ -203,12 +227,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526414395231</updated>
-      <workItem from="1526414397003" duration="3390000" />
+      <workItem from="1526414397003" duration="5133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3390000" />
+    <option name="totallyTimeSpent" value="5133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -240,6 +264,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -261,24 +290,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/stateful/Api/Api.test.js">
+    <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/stateful/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/stateful/Api/Api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -286,6 +301,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/reducers.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateful/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" selection-start-line="9" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
