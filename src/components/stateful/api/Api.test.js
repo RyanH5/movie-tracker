@@ -5,7 +5,7 @@ import { fetchRecentMovies } from './Api';
 import Key from '../../../apikey';
 
 
-describe('Api', () => {
+describe('api', () => {
   describe('fetchRecentMovies', () => {
     let mockUrl;
     let mockData;
