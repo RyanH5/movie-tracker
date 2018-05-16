@@ -1,6 +1,6 @@
-export const captureMovies = (movies) => {
-  return ({
-    type: 'CAPTURE_MOVIES',
-    movies
-  });
-};
+export const captureMovies = (movies) => (
+ {
+  type: 'CAPTURE_MOVIES',
+  movies
+ }
+);

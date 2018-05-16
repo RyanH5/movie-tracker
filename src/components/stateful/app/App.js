@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import './styles.css';
 import { fetchRecentMovies } from '../api/Api';
 import { movieData } from '../../../helpers';
+import { captureMovies } from '../../../actions/movieActions/movieActions'
 
 export class App extends Component {
-  constructor () {
-    super();
-    this.state = {
-      movies: []
-    };
-  }
 
   async componentDidMount () {
     let movieList = await fetchRecentMovies();
+
     let movies = movieData(movieList);
-    this.setState({
-      movies
-    });
+    this.props.captureMovies(movies)
   }
 
   render () {
@@ -28,22 +23,17 @@ export class App extends Component {
         </header>
         <ul>
           {
-            this.state.movies.map((movie) => {
-              const movieImage = movie.image;
-              return (
-                <ul key={12345}>
-                  <li key={movie.id}>{movie.title}</li>
-                  <img src={`${movieImageRootUrl}${movieImage}`} alt="Movie Poster"/>
-                </ul>
-              ) 
-              ; 
             }
-            )}
         </ul>
       </div>
-    ); 
-  } 
+    );
+  };
+};
 
-}
+export const mapStateToProps = state => {return {movies: state.movies}};
 
-
+export const mapDispatchToProps = dispatch => {
+  return {captureMovies: (movies) => (dispatch(captureMovies(movies)))}
+};
+//with router library
+export default connect(mapStateToProps, mapDispatchToProps)(App);
