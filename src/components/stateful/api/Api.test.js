@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { shallow, mount } from 'enzyme'
-import { fetchRecentMovies } from './api'
-import apiKey from '../../../apiKey.js'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { shallow, mount } from 'enzyme';
+import { fetchRecentMovies } from './api';
+import apiKey from '../../../apiKey.js';
 
 //not sure if we need to either make tests private or if we have to use
 
@@ -12,7 +12,7 @@ describe('api', () => {
     let mockData;
 
     beforeEach(() => {
-      mockUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
+      mockUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`;
       mockData = {
         results:
           {
@@ -36,7 +36,7 @@ describe('api', () => {
             overview: 'As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.',
             release_date: '2018-04-25'
           }
-      }
+      };
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
           status: 200,
@@ -73,10 +73,10 @@ describe('api', () => {
           (Error('API failed to respond'))
         )
       );
-      const actual = fetchRecentMovies(badUrl)
-      const expected = new Error('Failed to fetch')
+      const actual = fetchRecentMovies(badUrl);
+      const expected = new Error('Failed to fetch');
 
-      expect(actual).rejects.toEqual(expected)
+      expect(actual).rejects.toEqual(expected);
     });
   });
 });
