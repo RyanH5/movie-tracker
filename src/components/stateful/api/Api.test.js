@@ -8,8 +8,8 @@ import apiKey from '../../../apiKey.js'
 
 describe('api', () => {
   describe('fetchRecentMovies', () => {
-    let mockUrl
-    let mockData
+    let mockUrl;
+    let mockData;
 
     beforeEach(() => {
       mockUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
@@ -41,42 +41,42 @@ describe('api', () => {
         return Promise.resolve({
           status: 200,
           json: () => Promise.resolve(mockData)
-        })
-      })
-    })
+        });
+      });
+    });
 
     it('should get called with the correct parameters', async () => {
-      await fetchRecentMovies(mockUrl)
+      await fetchRecentMovies(mockUrl);
 
-      expect(window.fetch).toHaveBeenCalledWith(mockUrl)
-    })
+      expect(window.fetch).toHaveBeenCalledWith(mockUrl);
+    });
 
     it.skip('should throw an error if the status is not ok', () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
           status: 200,
           json: () => Promise.resolve(mockData)
-        })
-      })
+        });
+      });
 
-      const failedStatus = fetchRecentMovies()
-      const expected = Error('Failed to fetch')
+      const failedStatus = fetchRecentMovies();
+      const expected = Error('Failed to fetch');
 
-      expect(failedStatus).rejects.toEqual(expected)
-    })
+      expect(failedStatus).rejects.toEqual(expected);
+    });
 
     it('should throw an error if the response fails', () => {
-      let badUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=broken_key'
+      let badUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=broken_key';
 
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.reject(
           (Error('API failed to respond'))
         )
-      )
+      );
       const actual = fetchRecentMovies(badUrl)
       const expected = new Error('Failed to fetch')
 
       expect(actual).rejects.toEqual(expected)
-    })
-  })
-})
+    });
+  });
+});

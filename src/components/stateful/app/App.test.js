@@ -5,6 +5,6 @@ import App from './App';
 
 describe("App", () => {
   it("should be true", () => {
-    expect(true).toEqual(true)
+    expect(true).toEqual(true);
   });
 });
