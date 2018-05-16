@@ -20,6 +20,7 @@ export class App extends Component {
   }
 
   render () {
+    const movieImageRootUrl = "https://image.tmdb.org/t/p/w500";
     return (
       <div className="App">
         <header className="App-header">
@@ -27,14 +28,22 @@ export class App extends Component {
         </header>
         <ul>
           {
-            this.state.movies.map((movie, index) => {
-              return <li key={movie.id}>{movie.title}</li>;
-            })
-          }
+            this.state.movies.map((movie) => {
+              const movieImage = movie.image;
+              return (
+                <ul key={12345}>
+                  <li key={movie.id}>{movie.title}</li>
+                  <img src={`${movieImageRootUrl}${movieImage}`} alt="Movie Poster"/>
+                </ul>
+              ) 
+              ; 
+            }
+            )}
         </ul>
-
       </div>
-    );
-  }
+    ); 
+  } 
+
 }
+
 
