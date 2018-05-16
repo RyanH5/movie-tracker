@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import { fetchRecentMovies } from './api';
-import apiKey from '../../../apiKey.js';
+import apiKey from '../../../apiKey';
 
 //not sure if we need to either make tests private or if we have to use
 
