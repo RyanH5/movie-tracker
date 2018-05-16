@@ -1,5 +1,4 @@
 import { moviesReducer } from './reducers';
-import * as actions from '../actions/movieActions/movieActions';
 
 describe('reducers', () => {
   describe('moviesReducer', () => {
@@ -9,7 +8,12 @@ describe('reducers', () => {
 
     it('should update state with an array of movies', () => {
       const expected = [{}, {}];
-      expect(moviesReducer([{}, {}], 'CAPTURE_MOVIES')).toEqual(expected);
+      const mockAction = {
+        type: 'CAPTURE_MOVIES',
+        movies: [{}, {}]
+      };
+
+      expect(moviesReducer([{}, {}], mockAction)).toEqual(expected);
     });
   });
 });
