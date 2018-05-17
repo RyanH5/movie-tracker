@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import { fetchRecentMovies } from '../api/Api';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
 import { cleanMovieData } from '../../../helpers';
 import CreateUser from '../createUser/CreateUser';
+import LoginForm from '../LoginForm'
 
 export class App extends Component {
 
@@ -21,26 +23,27 @@ export class App extends Component {
       return (
         <article className="movie" key={`key${index}`}>
           <h3>{movie.title}</h3>
-          <img src={`${movieImageRootUrl+movie.image}`} alt="Movie Title" />
+          <img src={`${movieImageRootUrl + movie.image}`} alt="Movie Title" />
           <p>{movie.votes}</p>
         </article>
-      );
-    });
+      )
+    })
   };
 
   render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Movie Tracker</h1>
-        </header>
-        <CreateUser />
-        <section className="movies-wrapper">
-          {
-            this.displayMovies()
-          }
-        </section>
-      </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Movie Tracker</h1>
+          </header>
+          <section className="movies-wrapper">
+            {
+              this.displayMovies()
+            }
+          </section>
+        </div>
+      </Router>
     );
   };
 }
