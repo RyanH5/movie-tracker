@@ -1,4 +1,4 @@
-import { moviesReducer } from './reducers';
+import moviesReducer from './moviesReducer';
 
 describe('reducers', () => {
   describe('moviesReducer', () => {

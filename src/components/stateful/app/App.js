@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import './styles.css';
+import { connect } from 'react-redux';
 import { fetchRecentMovies } from '../api/Api';
-import { movieData } from '../../../helpers';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
+import { cleanMovieData } from '../../../helpers';
 
 export class App extends Component {
 
   async componentDidMount () {
-    let movieList = await fetchRecentMovies();
+    let recentMovies = await fetchRecentMovies();
+    let movieList = cleanMovieData(recentMovies.results);
     this.props.captureMovies(movieList);
   }
 
   displayMovies = () => {
     const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
-
     return this.props.movies.map((movie, index) => {
       return (
         <article className="movie" key={`key${index}`}>
