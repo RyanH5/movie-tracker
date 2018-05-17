@@ -7,6 +7,7 @@ import { fetchRecentMovies } from '../api/Api';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
 import { cleanMovieData } from '../../../helpers';
 import LoginForm from '../LoginForm'
+import CreateUser from '../createUser/CreateUser';
 
 export class App extends Component {
 
