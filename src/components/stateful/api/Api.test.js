@@ -51,20 +51,16 @@ describe('api', () => {
 
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.reject(
-          (Error('API failed to respond'))
+          (Error('Failed to Fetch'))
         )
       );
       const actual = fetchRecentMovies(badUrl);
-      const expected = new Error('Failed to fetch');
+      const expected = Error('Failed to Fetch');
 
       expect(actual).rejects.toEqual(expected);
     });
 
-    it('should call movieData with correct params', () => {
-
-    });
-
-    it('should return recentMovies', () => {
+    it.skip('should returns ', () => {
 
     });
   });
