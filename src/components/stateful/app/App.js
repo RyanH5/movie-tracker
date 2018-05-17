@@ -1,39 +1,61 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './styles.css';
 import { fetchRecentMovies } from '../api/Api';
 import { movieData } from '../../../helpers';
-import { captureMovies } from '../../../actions/movieActions/movieActions'
+import { captureMovies } from '../../../actions/movieActions/movieActions';
 
 export class App extends Component {
 
   async componentDidMount () {
     let movieList = await fetchRecentMovies();
-
-    let movies = movieData(movieList);
-    this.props.captureMovies(movies)
+    this.props.captureMovies(movieList);
   }
 
+  displayMovies = () => {
+    const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
+
+    return this.props.movies.map((movie, index) => {
+      return (
+        <article className="movie" key={`key${index}`}>
+          <h3>{movie.title}</h3>
+          <img src={`${movieImageRootUrl+movie.image}`} alt="Movie Title" />
+          <p>{movie.votes}</p>
+        </article>
+      );
+    });
+  };
+
   render () {
-    const movieImageRootUrl = "https://image.tmdb.org/t/p/w500";
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Movie Tracker</h1>
         </header>
-        <ul>
+        <section className="movies-wrapper">
           {
-            }
-        </ul>
+            this.displayMovies()
+          }
+        </section>
       </div>
     );
   };
+}
+
+export const mapStateToProps = (state) => {
+  return ({movies: state.movies});
 };
 
-export const mapStateToProps = state => {return {movies: state.movies}};
+export const mapDispatchToProps = dispatch => ({
+  captureMovies: movies => dispatch(captureMovies(movies))
+});
 
-export const mapDispatchToProps = dispatch => {
-  return {captureMovies: (movies) => (dispatch(captureMovies(movies)))}
+// wrap with router library
+
+App.propTypes = {
+  captureMovies: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired
 };
-//with router library
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

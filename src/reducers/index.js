@@ -1,6 +1,5 @@
-import { combineReducers } from 'redux'
-import moviesReducer from './moviesReducer'
-
+import { combineReducers } from 'redux';
+import moviesReducer from './moviesReducer';
 
 const rootReducer = combineReducers(
   {
@@ -8,4 +7,4 @@ const rootReducer = combineReducers(
   }
 );
 
-export default rootReducer
+export default rootReducer;
