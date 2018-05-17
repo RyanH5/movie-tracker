@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetchRecentMovies } from '../api/Api';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
 import { cleanMovieData } from '../../../helpers';
+import CreateUser from '../createUser/CreateUser';
 
 export class App extends Component {
 
@@ -33,6 +34,7 @@ export class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Movie Tracker</h1>
         </header>
+        <CreateUser />
         <section className="movies-wrapper">
           {
             this.displayMovies()
