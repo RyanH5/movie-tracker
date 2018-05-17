@@ -1,4 +1,4 @@
-export const movieData = (movieData) => movieData.map((movie, index) => {
+export const cleanMovieData = (movieData) => movieData.map((movie, index) => {
   return {
     title: movie.title,
     image: movie.backdrop_path,

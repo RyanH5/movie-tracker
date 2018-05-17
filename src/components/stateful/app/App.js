@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './styles.css';
 import { fetchRecentMovies } from '../api/Api';
-import { movieData } from '../../../helpers';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
+import { cleanMovieData } from '../../../helpers';
 
 export class App extends Component {
 
   async componentDidMount () {
-    let movieList = await fetchRecentMovies();
+    let recentMovies = await fetchRecentMovies();
+    let movieList = cleanMovieData(recentMovies.results);
     this.props.captureMovies(movieList);
   }
 
