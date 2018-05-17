@@ -1,49 +1,61 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './styles.css';
 import { fetchRecentMovies } from '../api/Api';
 import { movieData } from '../../../helpers';
+import { captureMovies } from '../../../actions/movieActions/movieActions';
 
 export class App extends Component {
-  constructor () {
-    super();
-    this.state = {
-      movies: []
-    };
-  }
 
   async componentDidMount () {
     let movieList = await fetchRecentMovies();
-    let movies = movieData(movieList);
-    this.setState({
-      movies
-    });
+    this.props.captureMovies(movieList);
   }
 
+  displayMovies = () => {
+    const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
+
+    return this.props.movies.map((movie, index) => {
+      return (
+        <article className="movie" key={`key${index}`}>
+          <h3>{movie.title}</h3>
+          <img src={`${movieImageRootUrl+movie.image}`} alt="Movie Title" />
+          <p>{movie.votes}</p>
+        </article>
+      );
+    });
+  };
+
   render () {
-    const movieImageRootUrl = "https://image.tmdb.org/t/p/w500";
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Movie Tracker</h1>
         </header>
-        <ul>
+        <section className="movies-wrapper">
           {
-            this.state.movies.map((movie) => {
-              const movieImage = movie.image;
-              return (
-                <ul key={12345}>
-                  <li key={movie.id}>{movie.title}</li>
-                  <img src={`${movieImageRootUrl}${movieImage}`} alt="Movie Poster"/>
-                </ul>
-              ) 
-              ; 
-            }
-            )}
-        </ul>
+            this.displayMovies()
+          }
+        </section>
       </div>
-    ); 
-  } 
-
+    );
+  };
 }
 
+export const mapStateToProps = (state) => {
+  return ({movies: state.movies});
+};
 
+export const mapDispatchToProps = dispatch => ({
+  captureMovies: movies => dispatch(captureMovies(movies))
+});
+
+// wrap with router library
+
+App.propTypes = {
+  captureMovies: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
