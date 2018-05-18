@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from './components/stateful/app/App';
+import App from './components/stateless/app/App';
 import rootReducer from './reducers';
 
 const devTools =
