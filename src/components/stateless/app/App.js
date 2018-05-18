@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink, Route } from 'react-router-dom';
-import { fetchRecentMovies } from '../api/Api';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
 import { cleanMovieData } from '../../../helpers';
 import PropTypes from 'prop-types';
-import CreateUser from '../createUser/CreateUser';
-import LoginUser from '../loginUser/LoginUser';
-import MovieContainer from '../movieContainer/MovieContainer';
+import CreateUser from '../../stateful/createUser/CreateUser';
+import LoginUser from '../../stateful/loginUser/LoginUser';
+import MovieContainer from '../../stateful/movieContainer/MovieContainer';
 import './styles.css';
 
 export class App extends Component {

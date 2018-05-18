@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cleanMovieData } from '../../../helpers';
 import { fetchRecentMovies } from '../api/Api';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
-import { App } from '../app/App';
+import { App } from '../../stateless/app/App';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom'
 
