@@ -9,44 +9,42 @@ import { captureMovies } from '../../../actions/movieActions/movieActions';
 import { cleanMovieData } from '../../../helpers';
 import CreateUser from '../createUser/CreateUser';
 import LoginForm from '../loginUser/LoginForm';
+import MovieContainer from '../../stateless/MovieContainer';
 
 export class App extends Component {
 
   async componentDidMount () {
-    let recentMovies = await fetchRecentMovies();
-    let movieList = cleanMovieData(recentMovies.results);
-    this.props.captureMovies(movieList);
+    // let recentMovies = await fetchRecentMovies();
+    // let movieList = cleanMovieData(recentMovies.results);
+    // this.props.captureMovies(movieList);
   }
-
-  displayMovies = () => {
-    const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
-    return this.props.movies.map((movie, index) =>
-       (
-        <article className="movie" key={`key${index}`}>
-          <h3>{movie.title}</h3>
-          <img src={`${movieImageRootUrl + movie.image}`} alt="Movie Title" />
-          <p>{movie.votes}</p>
-        </article>
-      ))
-  };
+  //
+  // displayMovies = () => {
+  //   const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
+  //   return this.props.movies.map((movie, index) =>
+  //      (
+  //       <article className="movie" key={`key${index}`}>
+  //         <h3>{movie.title}</h3>
+  //         <img src={`${movieImageRootUrl + movie.image}`} alt="Movie Title" />
+  //         <p>{movie.votes}</p>
+  //       </article>
+  //     ))
+  // };
 
   render () {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Movie Tracker</h1>
-          {/*<nav>*/}
-            {/*<NavLink to="/login" className="login">Login</NavLink>*/}
-            {/*/!*<NavLink to"/createUser" className="create-user">Create User</NavLink>*!/*/}
-          {/*</nav>*/}
+          <nav>
+            <NavLink to="/login" className="login">Login</NavLink>
+            <NavLink to="/createUser" className="create-user">Create User</NavLink>
+          </nav>
         </header>
-        {/*<Route exact path='/' component={App} />*/}
-        {/*<Route path='/login' component={LoginForm} />*/}
-        {/*<Route exact path='/' component={App} />*/}
+        <Route exact path='/' component={MovieContainer} />
+        <Route path='/login' component={LoginForm} />
         <section className="movies-wrapper">
-          {
-            this.displayMovies()
-          }
+
         </section>
       </div>
     );
@@ -70,6 +68,4 @@ App.propTypes = {
   displayMovies: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-// export default App;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
