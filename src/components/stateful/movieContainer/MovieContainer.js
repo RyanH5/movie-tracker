@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { cleanMovieData } from '../../helpers';
-import { fetchRecentMovies } from '../stateful/api/Api';
-import { captureMovies } from '../../actions/movieActions/movieActions';
-import { App } from '../stateful/app/App';
+import { cleanMovieData } from '../../../helpers';
+import { fetchRecentMovies } from '../api/Api';
+import { captureMovies } from '../../../actions/movieActions/movieActions';
+import { App } from '../../stateless/app/App';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
 class MovieContainer extends Component {
 
   async componentDidMount () {
-    // let recentMovies = await fetchRecentMovies();
-    // let movieList = cleanMovieData(recentMovies.results);
-    // this.props.captureMovies(movieList);
+    let recentMovies = await fetchRecentMovies();
+    let movieList = cleanMovieData(recentMovies.results);
+    this.props.captureMovies(movieList);
   }
 
   displayMovies = () => {
@@ -29,9 +30,7 @@ class MovieContainer extends Component {
   render () {
     return (
       <div>
-        {
-          // this.displayMovies();
-        }
+        {this.displayMovies()}
       </div>
     );
   }
@@ -47,4 +46,4 @@ export const mapDispatchToProps = dispatch => ({
   captureMovies: movies => dispatch(captureMovies(movies))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieContainer));
