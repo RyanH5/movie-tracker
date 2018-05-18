@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 class CreateUser extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       name: '',
-      password: '', 
-      email: '' 
+      password: '',
+      email: ''
     };
   }
 
@@ -24,7 +24,7 @@ class CreateUser extends Component {
             name="name"
             value={this.state.name}
             placeholder="ex. John Smith"
-            onChange={this.handleChange}   
+            onChange={this.handleChange}
           />
           <input
             type="text"
@@ -38,14 +38,13 @@ class CreateUser extends Component {
             name="password"
             value={this.state.password}
             placeholder="PASSWORD"
-            onChange={this.handleChange}   
+            onChange={this.handleChange}
           />
           <button>SIGN-UP</button>
-        </form>    
+        </form>
       </div>
     );
   }
 }
 
 export default CreateUser;
-
