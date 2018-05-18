@@ -7,6 +7,7 @@ import { Link, NavLink, Route } from 'react-router-dom';
 import { fetchRecentMovies } from '../api/Api';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
 import { cleanMovieData } from '../../../helpers';
+import LoginForm from '../LoginForm'
 import CreateUser from '../createUser/CreateUser';
 import LoginForm from '../loginUser/LoginForm';
 
