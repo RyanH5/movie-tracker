@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 import { App } from './App';
-import { fetchRecentMovies } from '../api/Api';
+import { fetchRecentMovies } from '../../stateful/api/Api';
 import { cleanMovieData } from '../../../helpers';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
