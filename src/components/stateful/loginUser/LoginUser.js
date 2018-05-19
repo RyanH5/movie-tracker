@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { fetchDatabase } from '../../../actions/loginActions';
+import { connect } from 'react-redux';
 
 class LoginUser extends Component {
   constructor () {
@@ -12,6 +14,12 @@ class LoginUser extends Component {
   handleChange = (event) => {
     const {name, value} = event.target;
     this.setState({[name]: value});
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const url = 'http://localhost:3000/api/users';
+    this.props.fetchDatabase(url, this.state.email, this.state.password)
   };
 
   render () {
@@ -37,4 +45,15 @@ class LoginUser extends Component {
   }
 }
 
-export default LoginUser;
+const mapStateToProps = (state) => ({
+  loginSuccess: state.loginSuccess,
+  loginErrored: state.loginErrored,
+  loginLoading: state.loginLoading
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchDatabase: (url, email, password) => dispatch(fetchDatabase(url, email, password))
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginUser)
