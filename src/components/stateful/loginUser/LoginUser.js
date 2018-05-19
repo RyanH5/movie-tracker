@@ -25,6 +25,9 @@ class LoginUser extends Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
+        {this.props.loginErrored &&
+          <p>Email and password do not match</p>
+        }
         <input
           type="text"
           name="email"
