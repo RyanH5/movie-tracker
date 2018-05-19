@@ -19,10 +19,12 @@ export class App extends Component {
             <NavLink to="/createUser" className="create-user">Create User</NavLink>
         </header>
         <Route exact path='/' component={MovieContainer} />
+        <Route exact path='/login' component={LoginUser} />
+        <Route exact path='/createUser' component={CreateUser} />
       </div>
     );
   };
-};
+}
 
 App.propTypes = {
   captureMovies: PropTypes.func.isRequired,
