@@ -16,7 +16,6 @@ export const userFetchSuccess = (user) => ({
 export const fetchDatabase = (url, email, password) => {
   return async (dispatch) => {
     try {
-      debugger
       dispatch(fetchIsLoading(true));
       const response = await fetch(url);
       if (!response.ok) {
@@ -24,7 +23,7 @@ export const fetchDatabase = (url, email, password) => {
       }
       dispatch(fetchIsLoading(false));
       const userData = await response.json();
-      const user = dispatch(findUser(userData, email, password));
+      const user = findUser(userData, email, password);
       dispatch(userFetchSuccess(user));
     } catch (e) {
       dispatch(fetchErrored(true));
