@@ -21,7 +21,19 @@ class LoginUser extends Component {
     event.preventDefault();
     const url = 'http://localhost:3000/api/users';
     this.props.fetchDatabase(url, this.state.email, this.state.password);
+    if (this.props.loginSuccess) {
+      this.props.history.push('/')
+    }
   };
+
+  // Only user by id and favorites
+
+  // TODO Sign out user when sign out button
+
+  // remove user id and favorites when they logout
+  // dispatch a sign out
+
+  // Redirect user when they sign in
 
   render () {
     return (
@@ -39,7 +51,7 @@ class LoginUser extends Component {
                 type="text"
                 name="email"
                 value={this.state.email}
-                placeholder="ex. Jsmith@gmail.com"
+                placeholder="ex. example@gmail.com"
                 onChange={this.handleChange}
               />
             </div>
@@ -48,7 +60,7 @@ class LoginUser extends Component {
                 type="text"
                 name="password"
                 value={this.state.password}
-                placeholder="PASSWORD"
+                placeholder="password"
                 onChange={this.handleChange}
               />
             </div>

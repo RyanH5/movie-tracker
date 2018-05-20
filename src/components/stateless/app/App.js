@@ -22,6 +22,7 @@ export class App extends Component {
                 <li><NavLink to="/login" className="login">Login</NavLink></li>
                 <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
                 <li><NavLink to="/favorites" className="favorites">Favorites</NavLink></li>
+                <li><NavLink to="/" className="home">Logout</NavLink></li>
               </nav>
           </div>
         </header>

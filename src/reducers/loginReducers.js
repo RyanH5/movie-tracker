@@ -1,7 +1,7 @@
 export const loginSuccess = (state = {}, action) => {
   switch (action.type) {
     case 'USER_FETCH_SUCCESS':
-      return action.user;
+      return {userId: action.userId};
     default:
       return state;
   }
