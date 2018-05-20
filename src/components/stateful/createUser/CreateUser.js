@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { fetchErrored } from '../../../actions/loginActions';
+import {userCreateSuccess, createNewUser} from '../../../actions/createUserActions'
+import {connect} from 'react-redux'
 
 class CreateUser extends Component {
   constructor() {
@@ -17,31 +19,24 @@ class CreateUser extends Component {
   };
 
 
-  handleSubmit = async () => {
-    try {
-      const url = 'http://localhost:3000/api/users/new';
-      await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(
-          {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password
-          }
-        ),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    } catch (e) {
-      fetchErrored(true);
-    }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const {name, email, password} = this.state
+    this.props.createNewUser(name, email, password)
   };
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          {
+            this.props.invalidForm &&
+            <p>Please complete required fields.</p>
+          }
+          {
+            this.props.createAccountFailed &&
+            <p>Email is already being used.</p>
+          }
           <input
             type="text"
             name="name"
@@ -70,4 +65,14 @@ class CreateUser extends Component {
   }
 }
 
-export default CreateUser;
+const mapStateToProps = (state) => ({
+  newUserId: state.newUserId,
+  invalidForm: state.invalidForm,
+  createAccountFailed: state.createAccountFailed
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  createNewUser: (name, email, password) => dispatch(createNewUser(name, email, password))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);
