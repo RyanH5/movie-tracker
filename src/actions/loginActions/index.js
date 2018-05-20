@@ -17,13 +17,25 @@ export const fetchDatabase = (url, email, password) => {
   return async (dispatch) => {
     try {
       dispatch(fetchIsLoading(true));
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            password,
+            email
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       if (!response.ok) {
         throw Error(response.statusText);
       }
       dispatch(fetchIsLoading(false));
       const userData = await response.json();
-      const user = findUser(userData, email, password);
+      // const user = findUser(userData, email, password);
+      const user = userData.data;
       dispatch(userFetchSuccess(user));
     } catch (e) {
       dispatch(fetchErrored(true));
@@ -31,6 +43,8 @@ export const fetchDatabase = (url, email, password) => {
   };
 };
 
-export const findUser = (userData, email, password) => {
-  return userData.data.find(user => user.email === email && user.password === password);
-};
+// export const findUser = (userData, email, password) => {
+//   return userData.data.find(user => {
+//     return user.email === email && user.password === password
+//   });
+// };
