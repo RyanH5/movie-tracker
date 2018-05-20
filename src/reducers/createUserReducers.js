@@ -7,10 +7,19 @@ export const newUserId = (state = -1, action) => {
   }
 };
 
-export const creationFailed = (state = false, action) => {
+export const invalidForm = (state = false, action) => {
   switch (action.type) {
-    case 'CREATE_USER_ERRORED':
-      return action.creationFailed;
+    case 'INCOMPLETE_ENTRIES':
+      return action.fieldsIncomplete;
+    default:
+      return state;
+  }
+}
+
+export const createAccountFailed = (state = false, action) => {
+  switch (action.type) {
+    case 'EMAIL_NOT_AVAILABLE':
+      return action.emailBeingUsed;
     default:
       return state;
   }

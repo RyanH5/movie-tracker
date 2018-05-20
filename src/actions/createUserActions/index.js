@@ -3,15 +3,20 @@ export const userCreateSuccess = (id) => ({
   id
 })
 
-export const userCreateErrored = (bool) => ({
-  type: 'CREATE_USER_ERRORED',
-  creationFailed: bool
+export const requiredIncomplete = (bool) => ({
+  type: 'INCOMPLETE_ENTRIES',
+  fieldsIncomplete: bool
+})
+
+export const creationDenied = (bool) => ({
+  type: 'EMAIL_NOT_AVAILABLE',
+  emailBeingUsed: bool
 })
 
 export const createNewUser = (name, email, password) => {
   return async (dispatch) => {
     if(!name || !email || !password) {
-      return dispatch(userCreateErrored(true))
+      return dispatch(requiredIncomplete(true))
     }
     try {
       const url = 'http://localhost:3000/api/users/new'
@@ -31,7 +36,7 @@ export const createNewUser = (name, email, password) => {
       const userCreated = await response.json()
       dispatch(userCreateSuccess(userCreated.id))
     } catch (e) {
-      dispatch(userCreateErrored(true))
+      dispatch(creationDenied(true))
     }
   }
 }

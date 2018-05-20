@@ -30,8 +30,12 @@ class CreateUser extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           {
-            this.props.creationFailed &&
+            this.props.invalidForm &&
             <p>Please complete required fields.</p>
+          }
+          {
+            this.props.createAccountFailed &&
+            <p>Email is already being used.</p>
           }
           <input
             type="text"
@@ -63,7 +67,8 @@ class CreateUser extends Component {
 
 const mapStateToProps = (state) => ({
   newUserId: state.newUserId,
-  creationFailed: state.creationFailed
+  invalidForm: state.invalidForm,
+  createAccountFailed: state.createAccountFailed
 })
 
 const mapDispatchToProps = (dispatch) => ({
