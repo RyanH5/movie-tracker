@@ -1,0 +1,91 @@
+
+input {
+  outline: none;
+  border: none;
+}
+
+.login-user-container {
+  width: 100%;
+  height: calc(100vh - 160px);
+  justify-content: center;
+  align-items: center;
+  form {
+    margin: 0;
+    padding: 0;
+    width: 560px;
+    p {
+      color: #fff;
+      text-align: center;
+    }
+    span {
+      width: 100%;
+      display: block;
+      font-size: 30px;
+      color: #fefefe;
+      line-height: 1.2;
+      text-transform: uppercase;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    .wrap-input {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      position: relative;
+      border: 1px solid #e0e0e0;
+      border-bottom: none;
+      background-color: #fff;
+      float: left;
+      input {
+        margin: 1rem 0;
+        height: 100%;
+        font-size: 15px;
+        color: #555555;
+        line-height: 1.2;
+        display: block;
+        width: 100%;
+        background: transparent;
+        padding: 0 30px;
+      }
+      &.top {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+      &.bottom {
+        width: 100%;
+      }
+    }
+    button {
+      font-size: 1rem;
+      color: #fff;
+      line-height: 1.2;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      width: 100%;
+      height: 60px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      overflow: hidden;
+      background: #111111;
+      position: relative;
+      z-index: 1;
+      &:hover {
+        background: #BF2604;
+        background: -webkit-linear-gradient(right, #F2790F, #BF2604);
+        background: -o-linear-gradient(right, #F2790F, #BF2604);
+        background: -moz-linear-gradient(right, #F2790F, #BF2604);
+        background: linear-gradient(right, #F2790F, #BF2604);
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        cursor: pointer;
+      }
+    }
+  }
+}

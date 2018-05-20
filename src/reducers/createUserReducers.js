@@ -14,7 +14,7 @@ export const invalidForm = (state = false, action) => {
     default:
       return state;
   }
-}
+};
 
 export const createAccountFailed = (state = false, action) => {
   switch (action.type) {
@@ -23,4 +23,4 @@ export const createAccountFailed = (state = false, action) => {
     default:
       return state;
   }
-}
+};
