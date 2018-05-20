@@ -12,6 +12,11 @@ import './styles.css';
 import logo from '../../../assets/MM-logo.png';
 
 export class App extends Component {
+
+  handleLogout = () => {
+    this.props.userSignOut(this.props.loginSuccess)
+  };
+
   render () {
     return (
       <div className="App">
@@ -22,7 +27,7 @@ export class App extends Component {
                 <li><NavLink to="/login" className="login">Login</NavLink></li>
                 <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
                 <li><NavLink to="/favorites" className="favorites">Favorites</NavLink></li>
-                <li><NavLink to="/" className="home">Logout</NavLink></li>
+                <li><NavLink to="/" className="home" onClick={this.handleLogout}>Logout</NavLink></li>
               </nav>
           </div>
         </header>
@@ -41,4 +46,12 @@ App.propTypes = {
   displayMovies: PropTypes.func.isRequired
 };
 
-export default App;
+const mapStateToProps = state => ({
+  loginSuccess: state.loginSuccess
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  userSignOut: (id) => dispatch(this.userSignOut(id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
