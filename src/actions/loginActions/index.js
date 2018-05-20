@@ -34,7 +34,6 @@ export const fetchDatabase = (url, email, password) => {
       }
       dispatch(fetchIsLoading(false));
       const userData = await response.json();
-      // const user = findUser(userData, email, password);
       const user = userData.data;
       dispatch(userFetchSuccess(user));
     } catch (e) {
@@ -42,9 +41,3 @@ export const fetchDatabase = (url, email, password) => {
     }
   };
 };
-
-// export const findUser = (userData, email, password) => {
-//   return userData.data.find(user => {
-//     return user.email === email && user.password === password
-//   });
-// };

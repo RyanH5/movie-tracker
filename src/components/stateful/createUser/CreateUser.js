@@ -17,25 +17,10 @@ class CreateUser extends Component {
   };
 
 
-  handleSubmit = async () => {
-    try {
-      const url = 'http://localhost:3000/api/users/new';
-      await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(
-          {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password
-          }
-        ),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    } catch (e) {
-      fetchErrored(true);
-    }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const {name, email, password} = this.state
+    this.props.createNewUser(name, email, password)
   };
 
   render() {
