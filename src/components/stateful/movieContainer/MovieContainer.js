@@ -6,6 +6,7 @@ import { captureMovies } from '../../../actions/movieActions/movieActions';
 import { App } from '../../stateless/app/App';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom'
+import './MovieContainer.css'
 
 class MovieContainer extends Component {
 
@@ -29,9 +30,11 @@ class MovieContainer extends Component {
 
   render () {
     return (
-      <div>
+      <div className="movie-header-container"><h2>Choose Your Favorites</h2>
+      <div className="movie-container d-flex">
+
         {this.displayMovies()}
-      </div>
+      </div></div>
     );
   }
 }
