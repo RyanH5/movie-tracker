@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import moviesReducer from './moviesReducer';
 import { loginSuccess, loginErrored, loginLoading } from './loginReducers';
-import { userCreationSuccess as userCreated } from './createUserReducers'
+import { newUserId, creationFailed } from './createUserReducers'
 
 const rootReducer = combineReducers(
   {
@@ -9,7 +9,8 @@ const rootReducer = combineReducers(
     loginSuccess,
     loginErrored,
     loginLoading,
-    userCreated
+    newUserId,
+    creationFailed
   }
 );
 

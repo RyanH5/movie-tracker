@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { fetchErrored } from '../../../actions/loginActions';
+import {userCreateSuccess, createNewUser} from '../../../actions/createUserActions'
+import {connect} from 'react-redux'
 
 class CreateUser extends Component {
   constructor() {
@@ -27,6 +29,10 @@ class CreateUser extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          {
+            this.props.creationFailed &&
+            <p>Please complete required fields.</p>
+          }
           <input
             type="text"
             name="name"
@@ -55,4 +61,13 @@ class CreateUser extends Component {
   }
 }
 
-export default CreateUser;
+const mapStateToProps = (state) => ({
+  newUserId: state.newUserId,
+  creationFailed: state.creationFailed
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  createNewUser: (name, email, password) => dispatch(createNewUser(name, email, password))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);
