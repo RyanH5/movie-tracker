@@ -15,8 +15,9 @@ export class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Movie Tracker</h1>
-            <NavLink to="/login" className="login">Login</NavLink>
-            <NavLink to="/createUser" className="create-user">Create User</NavLink>
+          <NavLink to="/" className="nav">Home</NavLink>
+          <NavLink to="/login" className="nav">Login</NavLink>
+          <NavLink to="/createUser" className="nav">Create User</NavLink>
         </header>
         <Route exact path='/' component={MovieContainer} />
         <Route exact path='/login' component={LoginUser} />
