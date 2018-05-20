@@ -1,0 +1,19 @@
+.movie-container {
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #f2f2f2; }
+  .movie-container article {
+    margin: 0 1rem; }
+
+.movie-header-container h2 {
+  width: 80%;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 2rem;
+  margin: 0 auto; }
+.movie-header-container h3 {
+  font-family: 'Telex', sans-serif; }
+
+/*# sourceMappingURL=MovieContainer.css.map */
