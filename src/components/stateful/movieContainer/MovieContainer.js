@@ -32,7 +32,6 @@ class MovieContainer extends Component {
     return (
       <div className="movie-header-container"><h2>Choose Your Favorites</h2>
       <div className="movie-container d-flex">
-
         {this.displayMovies()}
       </div></div>
     );

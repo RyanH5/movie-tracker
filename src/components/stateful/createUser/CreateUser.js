@@ -60,7 +60,8 @@ class CreateUser extends Component {
                 value={this.state.email}
                 placeholder="ex. Jsmith@gmail.com"
                 onChange={this.handleChange}
-              /></div>
+              />
+            </div>
             <div className="wrap-input bottom">
               <input
                 type="text"

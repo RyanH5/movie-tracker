@@ -8,9 +8,9 @@ export const fetchErrored = (bool) => ({
   isErrored: bool
 });
 
-export const userFetchSuccess = (user) => ({
+export const userFetchSuccess = (userId) => ({
   type: 'USER_FETCH_SUCCESS',
-  user
+  userId
 });
 
 export const fetchDatabase = (url, email, password) => {
@@ -35,7 +35,7 @@ export const fetchDatabase = (url, email, password) => {
       dispatch(fetchIsLoading(false));
       const userData = await response.json();
       const user = userData.data;
-      dispatch(userFetchSuccess(user));
+      dispatch(userFetchSuccess(user.id));
     } catch (e) {
       dispatch(fetchErrored(true));
     }
