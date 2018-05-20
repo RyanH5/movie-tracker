@@ -65,13 +65,10 @@ describe("fetchDatabase", () => {
         status: 200,
         json: () => Promise.resolve(mockData)
       })
-  });
+    });
   })
-  it("should call fetch with correct parameters", async () => {
-
-
-
-
+  it("should call fetch with correct parameters", () => {
+    fetchDatabase(mockUrl, mockEmail, mockPassword)
     expect(window.fetch).toHaveBeenCalledWith(mockUrl)
   });
 
@@ -86,6 +83,6 @@ describe("fetchDatabase", () => {
 
 describe("findUser", () => {
   it("should return user when called with correct parameters", () => {
-    
+
   });
 });
