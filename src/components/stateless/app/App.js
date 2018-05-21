@@ -28,7 +28,11 @@ export class App extends Component {
                   <li><NavLink to="/login" className="login">Login</NavLink></li>
                   <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
                   <li><NavLink to="/favorites" className="favorites">Favorites</NavLink></li>
-                  <li><NavLink to="/" className="home" onClick={this.handleLogout}>Logout</NavLink></li>
+                  {
+                    Object.values(this.props.loginSuccess).length > 0 &&
+                    <li><NavLink to="/" className="home" onClick={this.handleLogout}>Logout</NavLink></li>
+                  }
+
                 </ul>
               </nav>
           </div>
