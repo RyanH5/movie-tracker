@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createNewUser, clearForm } from '../../../actions/createUserActions';
+import { createNewUser } from '../../../actions/createUserActions';
 import { connect } from 'react-redux';
 import './CreateUser.css';
 
@@ -20,10 +20,6 @@ class CreateUser extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // dispatch an action
-    // state updates to new key clearAlerts: true
-    // this.props.clearAlerts === true
-    //
     const {name, email, password} = this.state;
     this.props.createNewUser(name, email, password);
   };

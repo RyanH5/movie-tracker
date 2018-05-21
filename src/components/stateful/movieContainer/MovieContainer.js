@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { cleanMovieData } from '../../../helpers';
 import { fetchRecentMovies } from '../api/Api';
 import { captureMovies } from '../../../actions/movieActions/movieActions';
-import { App } from '../../stateless/app/App';
 import { connect } from 'react-redux';
 import './MovieContainer.css'
 import { withRouter } from 'react-router-dom';
