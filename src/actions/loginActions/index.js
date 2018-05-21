@@ -32,7 +32,6 @@ export const fetchDatabase = (url, email, password) => {
       if (!response.ok) {
         throw Error(response.statusText);
       }
-      debugger;      
       dispatch(fetchIsLoading(false));
       const userData = await response.json();
       const user = userData.data;

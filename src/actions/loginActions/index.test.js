@@ -115,12 +115,44 @@ describe("Login Actions", () => {
   
       await thunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
-  
     });
+
+    it("should dispatch fetchIsLoading if status is not ok", async () => { 
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          status: 500,
+          ok: false,
+          json: () => Promise.resolve({})
+        });
+      });
+      
+      const expected = fetchIsLoading(false);
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
   
-    it.skip("should call userFetchSuccess if status is okay", () => {
-  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
+    // TODO FETCHISLOADING TRUE PRE-FETCH
+
+    it("should dispatch userFetchSuccess if status is ok", async () => { 
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve(mockUrl, {
+          status: 200,
+          ok: true,
+          json: () => Promise.resolve({
+            password:mockPassword,
+            email:mockEmail})
+        });
+      });
+      
+      const expected = userFetchSuccess(4);
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+
+
   });
 });
 
