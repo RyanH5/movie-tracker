@@ -71,12 +71,28 @@ describe('CreateUserActions', () => {
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
-    it.skip('should dispatch creationDenied by default', () => {
-
+    it('should dispatch requiredIncomplete by default', async () => {
+      const expected = requiredIncomplete(false);
+      const thunk = createNewUser(mockName, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
-    it.skip('should dispatch requiredIncomplete again if user leaves field empty', () => {
+    it('should dispatch createionDenied by default', async () => {
+      const expected = creationDenied(false);
+      const thunk = createNewUser(mockName, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
 
+    it('should dispatch requiredIncomplete again if user leaves field empty', async () => {
+      const expected = requiredIncomplete(true);
+      const thunk = createNewUser(mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
     it.skip('should call fetch with the correct parameters', () => {
