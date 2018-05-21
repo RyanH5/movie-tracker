@@ -1,3 +1,6 @@
+.App {
+  padding-bottom: 146px; }
+
 .movie-header-container {
   top: 146px;
   position: relative;
@@ -75,7 +78,6 @@
 @media only screen and (max-width: 480px) {
   html .App .App-header nav ul li {
     float: none; }
-
   html .App .App-header img {
     margin: 0 auto;
     display: block;
@@ -83,7 +85,13 @@
   html .App .App-header .inner-col {
     width: 100%;
     margin: 0;
-    display: block; } }
+    display: block; }
+
+  .movie-header-container {
+    top: 108px; }
+
+  .movie-container .movie-card button {
+    padding: 8px; } }
 /* Custom, iPhone Retina */
 
 /*# sourceMappingURL=MovieContainer.css.map */

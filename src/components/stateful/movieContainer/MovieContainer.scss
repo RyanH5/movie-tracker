@@ -1,7 +1,12 @@
+.App {
+  padding-bottom: 146px;
+}
+
 .movie-header-container {
   top: 146px;
   position: relative;
   z-index: 1;
+  //padding-bottom: 250px;
   h2 {
     width: 80%;
     background-color: #f2f2f2;
@@ -20,7 +25,6 @@
   justify-content: center;
   margin: 0 auto;
   background-color: #f2f2f2;
-
   .movie-card {
     margin: 0 1rem;
     position: relative;
@@ -101,18 +105,21 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-
-  html .App {
-    .App-header {
-      nav ul {
-        li {
-          float: none
-        }
+  //html .App {
+  //  .App-header {
+  //    nav ul {
+  //      li {
+  //        float: none
+  //      }
+  //    }
+  //  }
+  //}
+  html .App .App-header {
+    nav ul {
+      li {
+        float: none
       }
     }
-  }
-
-  html .App .App-header {
     img {
       margin: 0 auto;
       display: block;
@@ -124,7 +131,16 @@
       display: block;
     }
   }
-
+  .movie-header-container {
+    top: 108px;
+  }
+  .movie-container {
+    .movie-card {
+      button {
+        padding: 8px;
+      }
+    }
+  }
 }
 
 /* Custom, iPhone Retina */
