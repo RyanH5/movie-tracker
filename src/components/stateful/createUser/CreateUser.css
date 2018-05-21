@@ -67,10 +67,10 @@ input {
       z-index: 1; }
       .create-user-container form button:hover {
         background: #BF2604;
-        background: -webkit-linear-gradient(right, #F2790F, #BF2604);
-        background: -o-linear-gradient(right, #F2790F, #BF2604);
-        background: -moz-linear-gradient(right, #F2790F, #BF2604);
-        background: linear-gradient(right, #F2790F, #BF2604);
+        background: -webkit-linear-gradient(to left, #F2790F, #BF2604);
+        background: -o-linear-gradient(to left, #F2790F, #BF2604);
+        background: -moz-linear-gradient(to left, #F2790F, #BF2604);
+        background: linear-gradient(to left, #F2790F, #BF2604);
         -webkit-transition: all 0.4s;
         -o-transition: all 0.4s;
         -moz-transition: all 0.4s;

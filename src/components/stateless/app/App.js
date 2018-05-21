@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink, Route, Router } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CreateUser from '../../stateful/createUser/CreateUser';
 import LoginUser from '../../stateful/loginUser/LoginUser';
@@ -13,7 +13,7 @@ import { withRouter } from 'react-router-dom';
 export class App extends Component {
 
   handleLogout = () => {
-    this.props.userSignOut(this.props.loginSuccess)
+    this.props.userSignOut(this.props.loginSuccess);
     this.props.history.push('/')
   };
 

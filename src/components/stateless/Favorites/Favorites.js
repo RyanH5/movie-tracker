@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class Favorites extends Component {
   render () {
@@ -10,7 +9,5 @@ class Favorites extends Component {
     );
   }
 }
-
-Favorites.propTypes = {};
 
 export default Favorites;
