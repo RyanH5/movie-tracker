@@ -1,88 +1,186 @@
-import configureMockStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
-
-import {fetchIsLoading,
-        fetchErrored,
-        userFetchSuccess,
-        fetchDatabase,
-        findUser} from './index'
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import {
+  fetchIsLoading,
+  fetchErrored,
+  userFetchSuccess,
+  fetchDatabase
+} from './index';
 
 describe("Login Actions", () => {
+  let mockUrl;
+  let mockEmail;
+  let mockPassword;
+  let mockDispatch;
+
+  beforeEach(() => {
+    mockUrl = 'www.ok.com';
+    mockEmail = 'ok@gmail.com';
+    mockPassword = 'password';
+    mockDispatch = jest.fn();
+  });
+
   describe("fetchIsLoading", () => {
     it("should return type FETCH_LOADING", () => {
-      const bool = false
+      const bool = false;
       const expected = {
         type: 'FETCH_LOADING',
         isLoading: bool
-      }
-      expect(fetchIsLoading(bool)).toEqual(expected)
+      };
+
+      expect(fetchIsLoading(bool)).toEqual(expected);
     });
   });
 
   describe("fetchErrored", () => {
     it("should return type FETCH_ERRORED", () => {
-      const bool = false
+      const bool = false;
       const expected = {
         type: 'FETCH_ERRORED',
         isErrored: bool
-      }
-      expect(fetchErrored(bool)).toEqual(expected)
+      };
+
+      expect(fetchErrored(bool)).toEqual(expected);
     });
   });
 
   describe("userFetchSuccess", () => {
     it("should return type USER_FETCH_SUCCESS", () => {
-      const user = {
-        email: 'howiedewitt@aol.com',
-        password: 'pass'
-      }
+      const userId = {userId: 3};
       const expected = {
         type: 'USER_FETCH_SUCCESS',
-        user
-      }
-      expect(userFetchSuccess(user)).toEqual(expected)
+        userId
+      };
+      expect(userFetchSuccess(userId)).toEqual(expected);
     });
   });
-});
 
-describe("fetchDatabase", () => {
-  let mockUrl;
-  let mockEmail;
-  let mockPassword;
-  let mockData;
-  beforeEach(() => {
-    mockUrl = 'fake.url'
-    mockEmail = 'fakemail@gmail.com'
-    mockPassword = 'pass'
-    mockData = {
-      id: 'userID',
-      email: mockEmail,
-      password: mockPassword,
-      name: 'name'
-    }
-    window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.resolve({
-        status: 200,
-        json: () => Promise.resolve(mockData)
-      })
+  describe("fetchDatabase", () => {
+    it("should call fetch with correct parameters", async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve({})
+        });
+      });
+  
+      const expected = [
+        'www.ok.com',
+        {
+          method: 'POST',
+          body: JSON.stringify(
+            {
+              password: mockPassword,
+              email: mockEmail
+            }
+          ),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      ];
+
+      const mockDispatch = jest.fn();
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+      await thunk(mockDispatch);
+  
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
-  })
-  it("should call fetch with correct parameters", () => {
-    fetchDatabase(mockUrl, mockEmail, mockPassword)
-    expect(window.fetch).toHaveBeenCalledWith(mockUrl)
-  });
+  
+  
+    it("should dispatch fetchErrored if fetch fails", async () => { 
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('could not fetch'));
+      });
+      
+      const expected = fetchErrored(true);
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+  
+    });
 
-  it("should call fetchErrored if status is not okay", () => {
+    it("should dispatch fetchErrored if status is not ok", async () => { 
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          status: 500,
+          ok: false,
+          json: () => Promise.resolve({})
+        });
+      });
+      
+      const expected = fetchErrored(true);
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
 
-  });
+    it("should dispatch fetchIsLoading if status is not ok", async () => { 
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          status: 500,
+          ok: false,
+          json: () => Promise.resolve({})
+        });
+      });
+      
+      const expected = fetchIsLoading(false);
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+    // TODO FETCHISLOADING TRUE PRE-FETCH
 
-  it("should call userFetchSuccess if status is okay", () => {
+    it("should dispatch userFetchSuccess if status is ok", async () => { 
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve(mockUrl, {
+          status: 200,
+          ok: true,
+          json: () => Promise.resolve({
+            password:mockPassword,
+            email:mockEmail})
+        });
+      });
+      
+      const expected = userFetchSuccess(4);
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+
 
   });
 });
 
-describe("findUser", () => {
-  it("should return user when called with correct parameters", () => {
-
-  });
-});
+// response: Response
+// body
+// :
+// (...)
+// bodyUsed
+// :
+// false
+// headers
+// :
+// Headers {}
+// ok
+// :
+// true
+// redirected
+// :
+// false
+// status
+// :
+// 200
+// statusText
+// :
+// "OK"
+// type
+// :
+// "cors"
+// url
+// :
+// "http://localhost:3000/api/users"
