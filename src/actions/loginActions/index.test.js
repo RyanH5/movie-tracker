@@ -47,43 +47,59 @@ describe("Login Actions", () => {
 });
 
 describe("fetchDatabase", () => {
-  let mockUrl;
-  let mockEmail;
-  let mockPassword;
-  let mockData;
-  beforeEach(() => {
-    mockUrl = 'fake.url';
-    mockEmail = 'fakemail@gmail.com';
-    mockPassword = 'pass';
-    mockData = {
-      id: 'userID',
-      email: mockEmail,
-      password: mockPassword,
-      name: 'name'
-    };
+  it("should call fetch with correct parameters", async () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         status: 200,
-        json: () => Promise.resolve(mockData)
+        json: () => Promise.resolve({})
       });
     });
+
+    const mockUrl = 'www.ok.com';
+    const mockEmail = 'ok@gmail.com';
+    const mockPassword = 'password';
+    const expected = [
+      'www.ok.com',
+      {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            password: mockPassword,
+            email: mockEmail
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    ];
+    const mockDispatch = jest.fn();
+    const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+    await thunk(mockDispatch);
+
+    expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
-  it("should call fetch with correct parameters", () => {
-    fetchDatabase(mockUrl, mockEmail, mockPassword);
-    expect(window.fetch).toHaveBeenCalledWith(mockUrl);
+
+
+  it("should dispatch fetchErrored if fetch fails", async () => { 
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('could not fetch'));
+    });
+
+    const mockUrl = 'www.ok.com';
+    const mockEmail = 'ok@gmail.com';
+    const mockPassword = 'password';
+    const mockDispatch = jest.fn();
+    
+    const expected = fetchErrored(false);
+    const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+
+    await thunk(mockDispatch)
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+
   });
 
-  it("should call fetchErrored if status is not okay", () => {
-
-  });
-
-  it("should call userFetchSuccess if status is okay", () => {
-
-  });
-});
-
-describe("findUser", () => {
-  it("should return user when called with correct parameters", () => {
+  it.skip("should call userFetchSuccess if status is okay", () => {
 
   });
 });

@@ -36,8 +36,14 @@ export const fetchDatabase = (url, email, password) => {
       const userData = await response.json();
       const user = userData.data;
       dispatch(userFetchSuccess(user.id));
-    } catch (e) {
+    } catch (error) {
       dispatch(fetchErrored(true));
+      dispatch(fetchIsLoading(false)); 
+      // dispatch(setErrorMessage(error.message))   
+      // rename fetchErrored (make useful)
+      // dispatch error if response.ok false
+      // click fav prelogin, route to login/createUSR
+      // don't display logout preLogin
     }
   };
 };
