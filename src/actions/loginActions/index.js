@@ -32,6 +32,7 @@ export const fetchDatabase = (url, email, password) => {
       if (!response.ok) {
         throw Error(response.statusText);
       }
+      debugger;      
       dispatch(fetchIsLoading(false));
       const userData = await response.json();
       const user = userData.data;
@@ -39,11 +40,11 @@ export const fetchDatabase = (url, email, password) => {
     } catch (error) {
       dispatch(fetchErrored(true));
       dispatch(fetchIsLoading(false)); 
-      // dispatch(setErrorMessage(error.message))   
-      // rename fetchErrored (make useful)
-      // dispatch error if response.ok false
-      // click fav prelogin, route to login/createUSR
-      // don't display logout preLogin
     }
   };
 };
+// dispatch(setErrorMessage(error.message))   
+// rename fetchErrored (make useful)
+// dispatch error if response.ok false
+// click fav prelogin, route to login/createUSR
+// don't display logout preLogin
