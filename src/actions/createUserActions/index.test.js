@@ -3,15 +3,28 @@ import thunk from 'redux-thunk';
 import {
   userCreateSuccess,
   requiredIncomplete,
+  fetchIsLoading,
   creationDenied,
   createNewUser,
 } from './index';
 
-// test TYPE of each action
-// createNewUser called w/ correct params
-// success, fail etc
-
 describe('CreateUserActions', () => {
+  let mockUrl;
+  let mockEmail;
+  let mockPassword;
+  let mockDispatch;
+  let mockUserId;
+  let mockName;
+
+  beforeEach(() => {
+    mockUrl = 'www.ok.com';
+    mockName = 'Banana-George';
+    mockEmail = 'ok@gmail.com';
+    mockPassword = 'password';
+    mockDispatch = jest.fn();
+    mockUserId = 4;
+  });
+
   describe('userCreateSuccess', () => {
     it('should return type CREATE_USER_SUCCESS', () => {
       const id = {userId: 3};
@@ -37,6 +50,43 @@ describe('CreateUserActions', () => {
   });
 
   describe('creationDenied', () => {
+    it('should return type EMAIL_NOT_AVAILABLE', () => {
+      const bool = false;
+      const emailBeingUsed = bool;
+      const expected = {
+        type: 'EMAIL_NOT_AVAILABLE',
+        emailBeingUsed
+      };
+
+      expect(creationDenied(bool)).toEqual(expected);
+    });
+  });
+
+  describe('createNewUser', () => {
+    it('should dispatch fetchIsLoading by default', async () => {
+      const expected = fetchIsLoading(true);
+      const thunk = createNewUser(mockName, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+
+    it.skip('should dispatch creationDenied by default', () => {
+
+    });
+
+    it.skip('should dispatch requiredIncomplete again if user leaves field empty', () => {
+
+    });
+
+    it.skip('should call fetch with the correct parameters', () => {
+
+    });
+
+    it.skip('should dispatch userCreateSuccess if status is ok', () => {
+
+    });
+
 
   });
 });

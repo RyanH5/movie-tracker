@@ -42,8 +42,4 @@ export const fetchDatabase = (url, email, password) => {
     }
   };
 };
-// dispatch(setErrorMessage(error.message))   
-// rename fetchErrored (make useful)
-// dispatch error if response.ok false
-// click fav prelogin, route to login/createUSR
-// don't display logout preLogin
+

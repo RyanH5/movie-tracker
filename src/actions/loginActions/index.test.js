@@ -82,7 +82,6 @@ describe("Login Actions", () => {
         }
       ];
 
-      const mockDispatch = jest.fn();
       const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
       await thunk(mockDispatch);
   
