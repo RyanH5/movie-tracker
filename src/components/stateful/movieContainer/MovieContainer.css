@@ -1,11 +1,15 @@
-.movie-header-container h2 {
-  width: 80%;
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 2rem;
-  margin: 0 auto; }
-.movie-header-container h3 {
-  font-family: 'Telex', sans-serif; }
+.movie-header-container {
+  top: 146px;
+  position: relative;
+  z-index: 1; }
+  .movie-header-container h2 {
+    width: 80%;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto; }
+  .movie-header-container h3 {
+    font-family: 'Telex', sans-serif; }
 
 .movie-container {
   width: 80%;
@@ -30,10 +34,56 @@
       -moz-box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75);
       box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75); }
       .movie-container .movie-card button:hover {
-        background-color: #BF2604;
+        background-color: #bf2604;
         opacity: 1; }
       .movie-container .movie-card button:active {
         border: 2px solid #fff;
         padding: 10px; }
+
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  html .App .App-header {
+    height: auto;
+    padding-bottom: .5rem; }
+    html .App .App-header img {
+      height: 60px; }
+    html .App .App-header .inner-col {
+      width: 100%; }
+    html .App .App-header nav ul {
+      margin: 0;
+      padding: 0;
+      text-align: center; }
+      html .App .App-header nav ul li {
+        float: right; }
+        html .App .App-header nav ul li a {
+          font-size: 14px;
+          padding: .5rem .5rem; }
+
+  .movie-header-container {
+    top: 96px; }
+    .movie-header-container h2 {
+      width: 100%;
+      padding: 1rem;
+      margin: 0 auto 1rem;
+      font-size: 1.2rem; }
+
+  .movie-card img {
+    width: 100%; } }
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  html .App .App-header nav ul li {
+    float: none; }
+
+  html .App .App-header img {
+    margin: 0 auto;
+    display: block;
+    float: none; }
+  html .App .App-header .inner-col {
+    width: 100%;
+    margin: 0;
+    display: block; } }
+/* Custom, iPhone Retina */
 
 /*# sourceMappingURL=MovieContainer.css.map */

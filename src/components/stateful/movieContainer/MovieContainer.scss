@@ -1,4 +1,7 @@
 .movie-header-container {
+  top: 146px;
+  position: relative;
+  z-index: 1;
   h2 {
     width: 80%;
     background-color: #f2f2f2;
@@ -17,6 +20,7 @@
   justify-content: center;
   margin: 0 auto;
   background-color: #f2f2f2;
+
   .movie-card {
     margin: 0 1rem;
     position: relative;
@@ -34,7 +38,7 @@
       -moz-box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75);
       box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75);
       &:hover {
-        background-color: #BF2604;
+        background-color: #bf2604;
         opacity: 1;
       }
       &:active {
@@ -43,4 +47,87 @@
       }
     }
   }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  html .App {
+    .App-header {
+      height: auto;
+      padding-bottom: .5rem;
+      img {
+        height: 60px;;
+      }
+      .inner-col {
+        width: 100%;
+      }
+      nav ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        li {
+          float: right;
+          a {
+            font-size: 14px;
+            padding: .5rem .5rem;
+          }
+        }
+      }
+    }
+  }
+  .movie-header-container {
+    top: 96px;
+    h2 {
+      width: 100%;
+      padding: 1rem;
+      margin: 0 auto 1rem;
+      font-size: 1.2rem;
+    }
+  }
+  .movie-card img {
+    width: 100%;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+
+  html .App {
+    .App-header {
+      nav ul {
+        li {
+          float: none
+        }
+      }
+    }
+  }
+
+  html .App .App-header {
+    img {
+      margin: 0 auto;
+      display: block;
+      float: none;
+    }
+    .inner-col {
+      width: 100%;
+      margin: 0;
+      display: block;
+    }
+  }
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
 }

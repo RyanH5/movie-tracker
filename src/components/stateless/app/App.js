@@ -22,12 +22,14 @@ export class App extends Component {
       <div className="App">
         <header className="App-header  ">
           <div className="inner-col d-flex flex-justify-between">
-            <img src={logo} sizes="100vw" alt="Movie Tracker Logo" />
+            <NavLink to="/" className="home"><img src={logo} sizes="100vw" alt="Movie Tracker Logo" /></NavLink>
               <nav>
-                <li><NavLink to="/login" className="login">Login</NavLink></li>
-                <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
-                <li><NavLink to="/favorites" className="favorites">Favorites</NavLink></li>
-                <li><NavLink to="/" className="home" onClick={this.handleLogout}>Logout</NavLink></li>
+                <ul>
+                  <li><NavLink to="/login" className="login">Login</NavLink></li>
+                  <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
+                  <li><NavLink to="/favorites" className="favorites">Favorites</NavLink></li>
+                  <li><NavLink to="/" className="home" onClick={this.handleLogout}>Logout</NavLink></li>
+                </ul>
               </nav>
           </div>
         </header>
