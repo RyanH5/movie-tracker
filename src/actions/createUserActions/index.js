@@ -8,6 +8,11 @@ export const requiredIncomplete = (bool) => ({
   fieldsIncomplete: bool
 });
 
+export const fetchIsLoading = (bool) => ({
+  type: 'FETCH_IS_LOADING',
+  bool
+});
+
 export const creationDenied = (bool) => ({
   type: 'EMAIL_NOT_AVAILABLE',
   emailBeingUsed: bool
@@ -15,6 +20,7 @@ export const creationDenied = (bool) => ({
 
 export const createNewUser = (name, email, password) => {
   return async (dispatch) => {
+    dispatch(fetchIsLoading(true));
     dispatch(requiredIncomplete(false));
     dispatch(creationDenied(false));
     if (!name || !email || !password) {
@@ -37,8 +43,10 @@ export const createNewUser = (name, email, password) => {
       });
       const userCreated = await response.json();
       dispatch(userCreateSuccess(userCreated.id));
+      dispatch(fetchIsLoading(false));
     } catch (e) {
       dispatch(creationDenied(true));
+      dispatch(fetchIsLoading(false));
     }
   };
 };
