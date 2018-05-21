@@ -18,6 +18,8 @@ export class App extends Component {
   };
 
   render () {
+    const userLoggedInStatus = Object.values(this.props.loginSuccess).length > 0
+    const favoritesPath = userLoggedInStatus ? '/favorites' : '/login'
     return (
       <div className="App">
         <header className="App-header  ">
@@ -26,15 +28,15 @@ export class App extends Component {
               <nav>
                 <ul>
                   {
-                    Object.values(this.props.loginSuccess).length === 0 &&
+                    !userLoggedInStatus &&
                     <li><NavLink to="/login" className="login">Login</NavLink></li>
                   }
                   {
-                    Object.values(this.props.loginSuccess).length > 0 &&
+                    userLoggedInStatus &&
                     <li><NavLink to="/" className="home" onClick={this.handleLogout}>Logout</NavLink></li>
                   }
                   <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
-                  <li><NavLink to="/favorites" className="favorites">Favorites</NavLink></li>
+                  <li><NavLink to={favoritesPath} className="favorites">Favorites</NavLink></li>
                 </ul>
               </nav>
           </div>
