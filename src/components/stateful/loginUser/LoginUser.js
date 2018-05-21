@@ -23,9 +23,9 @@ class LoginUser extends Component {
     event.preventDefault();
     const url = 'http://localhost:3000/api/users';
     this.props.fetchDatabase(url, this.state.email, this.state.password);
-    // if (this.props.loginSuccess) {
-    //   this.props.history.push('/')
-    // }
+    if (this.props.loginSuccess) {
+      this.props.history.push('/')
+    }
   };
 
   // Only user by id and favorites

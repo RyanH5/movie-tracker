@@ -14,7 +14,7 @@ export class App extends Component {
 
   handleLogout = () => {
     this.props.userSignOut(this.props.loginSuccess)
-    // this.props.history.push('/')
+    this.props.history.push('/')
   };
 
   render () {
