@@ -41,10 +41,11 @@ export const createNewUser = (name, email, password) => {
           'Content-Type': 'application/json'
         }
       });
+      
       const userCreated = await response.json();
       dispatch(userCreateSuccess(userCreated.id));
       dispatch(fetchIsLoading(false));
-    } catch (e) {
+    } catch (error) {
       dispatch(creationDenied(true));
       dispatch(fetchIsLoading(false));
     }

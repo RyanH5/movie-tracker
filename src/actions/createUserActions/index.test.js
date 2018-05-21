@@ -89,9 +89,9 @@ describe('CreateUserActions', () => {
 
     it('should dispatch requiredIncomplete again if user leaves field empty', async () => {
       const expected = requiredIncomplete(true);
-      const thunk = createNewUser(mockEmail, mockPassword);
+      const badThunk = createNewUser(mockEmail, mockPassword);
   
-      await thunk(mockDispatch);
+      await badThunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
