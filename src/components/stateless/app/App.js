@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink, Route } from 'react-router-dom';
-import { captureMovies } from '../../../actions/movieActions/movieActions';
-import { cleanMovieData } from '../../../helpers';
+import { NavLink, Route, Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CreateUser from '../../stateful/createUser/CreateUser';
 import LoginUser from '../../stateful/loginUser/LoginUser';
@@ -10,11 +8,13 @@ import MovieContainer from '../../stateful/movieContainer/MovieContainer';
 import Favorites from '../Favorites/Favorites'
 import './styles.css';
 import logo from '../../../assets/MM-logo.png';
+import { withRouter } from 'react-router-dom';
 
 export class App extends Component {
 
   handleLogout = () => {
     this.props.userSignOut(this.props.loginSuccess)
+    // this.props.history.push('/')
   };
 
   render () {
@@ -41,7 +41,6 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  captureMovies: PropTypes.func.isRequired,
   movies: PropTypes.array.isRequired,
   displayMovies: PropTypes.func.isRequired
 };
@@ -54,4 +53,4 @@ const mapDispatchToProps = (dispatch) => ({
   userSignOut: (id) => dispatch(this.userSignOut(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

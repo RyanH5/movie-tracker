@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { fetchDatabase } from '../../../actions/loginActions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import './LoginUser.css'
 
 class LoginUser extends Component {
@@ -21,9 +23,9 @@ class LoginUser extends Component {
     event.preventDefault();
     const url = 'http://localhost:3000/api/users';
     this.props.fetchDatabase(url, this.state.email, this.state.password);
-    if (this.props.loginSuccess) {
-      this.props.history.push('/')
-    }
+    // if (this.props.loginSuccess) {
+    //   this.props.history.push('/')
+    // }
   };
 
   // Only user by id and favorites
@@ -82,4 +84,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchDatabase: (url, email, password) => dispatch(fetchDatabase(url, email, password))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginUser);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginUser));
