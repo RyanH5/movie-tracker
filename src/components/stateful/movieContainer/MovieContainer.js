@@ -18,7 +18,7 @@ class MovieContainer extends Component {
   }
 
   handleUserFavorites = () => {
-    if (!this.props.loginSuccess) {
+    if (Object.keys(this.props.loginSuccess).length === 0) {
       alert('Please create an account in order to add favorites')
     }
   };
