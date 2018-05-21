@@ -318,16 +318,23 @@ html {
 .App {
   background-color: rgba(191, 38, 4, 0.85); }
   .App .App-header {
-    height: 160px;
+    height: 146px;
     background-color: #4f4b46;
-    padding: .5rem 0 1.5rem 0;
-    align-items: center; }
+    padding: .5rem 0 0 0;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2; }
     .App .App-header .inner-col {
       margin: 0 auto;
       width: 80%; }
     .App .App-header img {
       height: 110px;
-      margin-top: 1rem; }
+      margin-top: 1rem;
+      margin-left: 1rem; }
+      .App .App-header img:hover {
+        cursor: pointer; }
     .App .App-header h1 {
       margin: 0;
       color: #fff;

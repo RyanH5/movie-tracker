@@ -4,7 +4,7 @@ input {
 
 .login-user-container {
   width: 100%;
-  height: calc(100vh - 160px);
+  height: 100vh;
   justify-content: center;
   align-items: center; }
   .login-user-container form {
