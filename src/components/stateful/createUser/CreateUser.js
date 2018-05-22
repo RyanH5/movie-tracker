@@ -18,12 +18,11 @@ class CreateUser extends Component {
     this.setState({[name]: value});
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const {name, email, password} = this.state;
     const url = 'http://localhost:3000/api/users/new';
-    this.props.createNewUser(url, name, email, password);
-    // if (this.props.loginSuccess && !this.props.invalidForm) {
+    await this.props.createNewUser(url, name, email, password);
     if (this.props.loginSuccess &&
       !this.props.invalidForm) {
       this.props.history.push('/')
