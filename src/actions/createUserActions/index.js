@@ -42,7 +42,6 @@ export const createNewUser = (url, name, email, password) => {
           'Content-Type': 'application/json'
         }
       });
-
       const userCreated = await response.json();
       dispatch(userCreateSuccess(userCreated.id));
       dispatch(userFetchSuccess(userCreated.id));
