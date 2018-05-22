@@ -1,3 +1,5 @@
+import { userFetchSuccess } from '../loginActions/index';
+
 export const userCreateSuccess = (id) => ({
   type: 'CREATE_USER_SUCCESS',
   id
@@ -18,7 +20,7 @@ export const creationDenied = (bool) => ({
   emailBeingUsed: bool
 });
 
-export const createNewUser = (name, email, password) => {
+export const createNewUser = (url, name, email, password) => {
   return async (dispatch) => {
     dispatch(fetchIsLoading(true));
     dispatch(requiredIncomplete(false));
@@ -27,7 +29,6 @@ export const createNewUser = (name, email, password) => {
       return dispatch(requiredIncomplete(true));
     }
     try {
-      const url = 'http://localhost:3000/api/users/new';
       const response = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(
@@ -41,9 +42,10 @@ export const createNewUser = (name, email, password) => {
           'Content-Type': 'application/json'
         }
       });
-      
+
       const userCreated = await response.json();
       dispatch(userCreateSuccess(userCreated.id));
+      dispatch(userFetchSuccess(userCreated.id));
       dispatch(fetchIsLoading(false));
     } catch (error) {
       dispatch(creationDenied(true));

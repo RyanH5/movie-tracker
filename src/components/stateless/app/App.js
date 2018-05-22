@@ -51,8 +51,8 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  movies: PropTypes.array.isRequired,
-  displayMovies: PropTypes.func.isRequired
+  movies: PropTypes.array,
+  displayMovies: PropTypes.func
 };
 
 const mapStateToProps = state => ({

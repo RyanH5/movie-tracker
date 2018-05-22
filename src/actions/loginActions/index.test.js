@@ -1,5 +1,3 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import {
   fetchIsLoading,
   fetchErrored,
@@ -73,9 +71,7 @@ describe("Login Actions", () => {
         });
       });
   
-      const expected = [
-        'www.ok.com',
-        {
+      const expected = ['www.ok.com', {
           method: 'POST',
           body: JSON.stringify(
             {

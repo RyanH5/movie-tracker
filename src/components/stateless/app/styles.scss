@@ -385,7 +385,7 @@ html {
   .App-header {
     height: 146px;
     background-color: #4f4b46;
-    padding: .5rem 0 0 0;
+    //padding: .5rem 0 0 0;
     align-items: center;
     position: fixed;
     top: 0;
@@ -441,7 +441,17 @@ html {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-
+  html .App .App-header {
+    img {
+      margin: 10px auto 3px;
+    }
+    nav ul li {
+      margin: 0;
+      a {
+        padding: 6px;
+      }
+    }
+  }
 }
 
 /* Custom, iPhone Retina */

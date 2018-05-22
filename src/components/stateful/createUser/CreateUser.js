@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createNewUser } from '../../../actions/createUserActions';
+import { createNewUser, userCreateSuccess } from '../../../actions/createUserActions';
 import { connect } from 'react-redux';
 import './CreateUser.css';
 
@@ -21,7 +21,13 @@ class CreateUser extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const {name, email, password} = this.state;
-    this.props.createNewUser(name, email, password);
+    const url = 'http://localhost:3000/api/users/new';
+    this.props.createNewUser(url, name, email, password);
+    // if (this.props.loginSuccess && !this.props.invalidForm) {
+    if (this.props.loginSuccess &&
+      !this.props.invalidForm) {
+      this.props.history.push('/')
+    }
   };
 
   render () {
@@ -78,11 +84,12 @@ class CreateUser extends Component {
 const mapStateToProps = (state) => ({
   newUserId: state.newUserId,
   invalidForm: state.invalidForm,
-  createAccountFailed: state.createAccountFailed
+  createAccountFailed: state.createAccountFailed,
+  loginSuccess: state.loginSuccess
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createNewUser: (name, email, password) => dispatch(createNewUser(name, email, password))
+  createNewUser: (url, name, email, password) => dispatch(createNewUser(url, name, email, password))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);

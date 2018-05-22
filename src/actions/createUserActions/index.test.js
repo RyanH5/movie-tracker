@@ -1,11 +1,9 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import {
   userCreateSuccess,
   requiredIncomplete,
   fetchIsLoading,
   creationDenied,
-  createNewUser,
+  createNewUser
 } from './index';
 
 describe('CreateUserActions', () => {
@@ -15,6 +13,7 @@ describe('CreateUserActions', () => {
   let mockDispatch;
   let mockUserId;
   let mockName;
+  let thunk;
 
   beforeEach(() => {
     mockUrl = 'www.ok.com';
@@ -23,6 +22,7 @@ describe('CreateUserActions', () => {
     mockPassword = 'password';
     mockDispatch = jest.fn();
     mockUserId = 4;
+    thunk = createNewUser(mockName, mockEmail, mockPassword);
   });
 
   describe('userCreateSuccess', () => {
@@ -44,7 +44,7 @@ describe('CreateUserActions', () => {
         type: 'INCOMPLETE_ENTRIES',
         fieldsIncomplete
       };
-  
+
       expect(requiredIncomplete(bool)).toEqual(expected);
     });
   });
@@ -65,24 +65,21 @@ describe('CreateUserActions', () => {
   describe('createNewUser', () => {
     it('should dispatch fetchIsLoading by default', async () => {
       const expected = fetchIsLoading(true);
-      const thunk = createNewUser(mockName, mockEmail, mockPassword);
-  
+
       await thunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
     it('should dispatch requiredIncomplete by default', async () => {
       const expected = requiredIncomplete(false);
-      const thunk = createNewUser(mockName, mockEmail, mockPassword);
-  
+
       await thunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
     it('should dispatch createionDenied by default', async () => {
       const expected = creationDenied(false);
-      const thunk = createNewUser(mockName, mockEmail, mockPassword);
-  
+
       await thunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
@@ -90,19 +87,62 @@ describe('CreateUserActions', () => {
     it('should dispatch requiredIncomplete again if user leaves field empty', async () => {
       const expected = requiredIncomplete(true);
       const badThunk = createNewUser(mockEmail, mockPassword);
-  
+
       await badThunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
-    it.skip('should call fetch with the correct parameters', () => {
+    it('should call fetch with the correct parameters', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve({})
+        });
+      });
 
+      const expected = [mockUrl, {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            name: mockName,
+            email: mockEmail,
+            password: mockPassword
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }];
+      const thunk = createNewUser(mockUrl, mockName, mockEmail, mockPassword);
+      await thunk(mockDispatch);
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
 
     it.skip('should dispatch userCreateSuccess if status is ok', () => {
 
     });
+    it.skip('should throw error is status in not ok', () => {
 
+    });
+    it.skip('should throw an error if the fetch fails', () => {
 
+    });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
