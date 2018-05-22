@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { cleanMovieData } from '../../../helpers';
-import { fetchRecentMovies } from '../api/Api';
-import { captureMovies } from '../../../actions/movieActions/movieActions';
+import { fetchRecentMovies, fetchFavorites, addFavorite } from '../api/Api';
+import { captureMovies, captureFavorites } from '../../../actions/movieActions/movieActions';
 import { connect } from 'react-redux';
-import './MovieContainer.css'
+import './MovieContainer.css';
 import { withRouter } from 'react-router-dom';
 
 
@@ -15,14 +15,29 @@ class MovieContainer extends Component {
     this.props.captureMovies(movieList);
   }
 
-  handleUserFavorites = () => {
+  toggleFavorite = (movie_id) => {
+    if(this.props.loginSuccess === {}) {
+      fetchFavorites()
+      this.props.favorites.some(favorite => {
+        return favorite.movieId === movie_id;
+      })
+    }
+  }
+
+  handleUserFavorites = (movie_id) => {
     if (Object.keys(this.props.loginSuccess).length === 0) {
-      alert('Please create an account in order to add favorites')
+      alert('Please create an account in order to add favorites');
+    } else {
+      this.toggleFavorite(movie_id);
+      // fetch post
     }
   };
 
   displayMovies = () => {
     const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
+    const movies = this.props.location.pathname === '/favorites' ? 
+      this.props.favorites : 
+      this.props.movies;
     return this.props.movies.map((movie, index) =>
       (
         <article className="movie-card" key={`key${index}`}>
@@ -37,9 +52,10 @@ class MovieContainer extends Component {
   render () {
     return (
       <div className="movie-header-container"><h2>Choose Your Favorites</h2>
-      <div className="movie-container d-flex">
-        {this.displayMovies()}
-      </div></div>
+        <div className="movie-container d-flex">
+
+          {this.displayMovies()}
+        </div></div>
     );
   }
 }
@@ -48,11 +64,15 @@ MovieContainer.propTypes = {};
 
 export const mapStateToProps = state => ({
   movies: state.movies,
-  loginSuccess: state.loginSuccess
+  loginSuccess: state.loginSuccess,
+  favorites: state.favorites
 });
 
 export const mapDispatchToProps = dispatch => ({
-  captureMovies: movies => dispatch(captureMovies(movies))
+  captureMovies: movies => dispatch(captureMovies(movies)),
+  captureFavorites: favorites => dispatch(captureFavorites(favorites)),
+  
+
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieContainer));
