@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { fetchDatabase } from '../../../actions/loginActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import './LoginUser.css';
+
+import './LoginUser.css'
 
 class LoginUser extends Component {
   constructor () {

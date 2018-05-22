@@ -24,3 +24,12 @@ export const createAccountFailed = (state = false, action) => {
       return state;
   }
 };
+
+export const createUserSuccess = (state = {}, action) => {
+  switch (action.type) {
+    case 'CREATE_USER_SUCCESS':
+      return action.id;
+    default:
+      return state;
+  }
+};

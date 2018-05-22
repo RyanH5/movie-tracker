@@ -1,5 +1,3 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import {
   fetchIsLoading,
   fetchErrored,
@@ -12,12 +10,14 @@ describe("Login Actions", () => {
   let mockEmail;
   let mockPassword;
   let mockDispatch;
+  let mockUserId;
 
   beforeEach(() => {
     mockUrl = 'www.ok.com';
     mockEmail = 'ok@gmail.com';
     mockPassword = 'password';
     mockDispatch = jest.fn();
+    mockUserId = 4;
   });
 
   describe("fetchIsLoading", () => {
@@ -56,6 +56,13 @@ describe("Login Actions", () => {
   });
 
   describe("fetchDatabase", () => {
+    it('should dispatch fetchIsLoading by default', async () => {
+      const expected = fetchIsLoading(true);
+      const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
+  
+      await thunk(mockDispatch);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
     it("should call fetch with correct parameters", async () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
@@ -64,9 +71,7 @@ describe("Login Actions", () => {
         });
       });
   
-      const expected = [
-        'www.ok.com',
-        {
+      const expected = ['www.ok.com', {
           method: 'POST',
           body: JSON.stringify(
             {
@@ -80,7 +85,6 @@ describe("Login Actions", () => {
         }
       ];
 
-      const mockDispatch = jest.fn();
       const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
       await thunk(mockDispatch);
   
@@ -132,55 +136,22 @@ describe("Login Actions", () => {
       await thunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
-    // TODO FETCHISLOADING TRUE PRE-FETCH
 
-    it("should dispatch userFetchSuccess if status is ok", async () => { 
+    it("should dispatch userFetchSuccess if status is ok", async () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.resolve(mockUrl, {
-          status: 200,
+        return Promise.resolve({
           ok: true,
+          status: 200,
           json: () => Promise.resolve({
-            password:mockPassword,
-            email:mockEmail})
+            data: {id: 4, name: "cam", password: "asdf", email: "cam@gmail.com"}
+          })
         });
       });
-      
+
       const expected = userFetchSuccess(4);
       const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);
-  
       await thunk(mockDispatch);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
-
-
   });
 });
-
-// response: Response
-// body
-// :
-// (...)
-// bodyUsed
-// :
-// false
-// headers
-// :
-// Headers {}
-// ok
-// :
-// true
-// redirected
-// :
-// false
-// status
-// :
-// 200
-// statusText
-// :
-// "OK"
-// type
-// :
-// "cors"
-// url
-// :
-// "http://localhost:3000/api/users"
