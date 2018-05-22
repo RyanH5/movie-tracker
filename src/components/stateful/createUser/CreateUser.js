@@ -22,8 +22,8 @@ class CreateUser extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const {name, email, password} = this.state;
-    this.props.createNewUser(name, email, password);
-    if(this.props.newUserId) {
+    if(this.props.invalidForm && this.props.createAccountFailed) {
+      this.props.createNewUser(name, email, password);
       const url = 'http://localhost:3000/api/users';
       this.props.fetchDatabase(url, email, password)
       this.props.history.push('/')
