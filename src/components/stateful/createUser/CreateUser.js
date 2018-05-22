@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { createNewUser } from '../../../actions/createUserActions';
+import { createNewUser } from '../../../actions/createUserActions/index.js';
+import { fetchDatabase } from '../../../actions/loginActions/index.js'
 import { connect } from 'react-redux';
 import './CreateUser.css';
 
@@ -22,6 +23,11 @@ class CreateUser extends Component {
     event.preventDefault();
     const {name, email, password} = this.state;
     this.props.createNewUser(name, email, password);
+    if(this.props.newUserId) {
+      const url = 'http://localhost:3000/api/users';
+      this.props.fetchDatabase(url, email, password)
+      this.props.history.push('/')
+    }
   };
 
   render () {
@@ -82,7 +88,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createNewUser: (name, email, password) => dispatch(createNewUser(name, email, password))
+  createNewUser: (name, email, password) => dispatch(createNewUser(name, email, password)),
+  fetchDatabase: (url, email, password) => dispatch(fetchDatabase(url, email, password))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);
