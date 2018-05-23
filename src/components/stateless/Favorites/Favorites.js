@@ -11,7 +11,7 @@ class Favorites extends Component {
       <article className='favorites-card' key={`key${index}`}>
         <h3>{movie.title}</h3>
         <img src={`${movieImageRootUrl + movie.poster_path}`} alt={movie.title} />
-        <p>Vote average: {movie.vote}</p>
+        <p>Vote average: {movie.vote_average}</p>
       </article>
     ));
   }
