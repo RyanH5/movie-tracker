@@ -7,7 +7,6 @@ import './MovieContainer.css';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-
 class MovieContainer extends Component {
 
   async componentDidMount () {
@@ -17,21 +16,20 @@ class MovieContainer extends Component {
   }
 
   toggleFavorite = async (movie_id, userId) => {
-    console.log(this.props.userId);
     if(this.props.userId) {
       const favs = await fetchFavorites(this.props.userId);
-      console.log(favs);
       this.props.favorites.some(favorite => {
         return favorite.movieId === movie_id;
       });
     }
   }
 
-  handleUserFavorites = (movie_id, userId) => {
+  handleUserFavorites = (movieId) => {
     if (Object.keys(this.props.loginSuccess).length === 0) {
       alert('Please create an account in order to add favorites');
     } else {
-      this.toggleFavorite(movie_id, this.props.userId);
+      // this.toggleFavorite(movie);
+      this.props.captureFavorites(movieId)
       // fetch post
     }
   };
@@ -45,7 +43,9 @@ class MovieContainer extends Component {
       (
         <article className="movie-card" key={`key${index}`}>
           <h3>{movie.title}</h3>
-          <button onClick={this.handleUserFavorites}>Favorite</button>
+          <button onClick={() => {
+            const id = this.props.movies[index]
+            this.handleUserFavorites(id)}}>Favorite</button>
           <img src={`${movieImageRootUrl + movie.image}`} alt={movie.title} />
           <p>Vote Average: {movie.vote}</p>
         </article>
@@ -56,7 +56,6 @@ class MovieContainer extends Component {
     return (
       <div className="movie-header-container"><h2>Choose Your Favorites</h2>
         <div className="movie-container d-flex">
-
           {this.displayMovies()}
         </div></div>
     );
