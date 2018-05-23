@@ -4,3 +4,10 @@ export const captureMovies = movies => (
     movies
   }
 );
+
+export const captureFavorites = favorites => (
+  {
+    type: 'CAPTURE_FAVORITES',
+    favorites
+  }
+);  
