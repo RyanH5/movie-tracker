@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fetchDatabase } from '../../../actions/loginActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchFavorites } from '../api/Api';
+import { fetchFavorites } from '../../../api/Api';
 
 import './LoginUser.css';
 import { captureFavorites } from '../../../actions/movieActions/movieActions';
