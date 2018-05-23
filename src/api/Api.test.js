@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import { fetchRecentMovies } from './api';
-import apiKey from '../../../apiKey';
-
-//not sure if we need to either make tests private or if we have to use
+import apiKey from '../apiKey';
 
 describe('api', () => {
   describe('fetchRecentMovies', () => {
@@ -58,10 +56,6 @@ describe('api', () => {
       const expected = Error('Failed to Fetch');
 
       expect(actual).rejects.toEqual(expected);
-    });
-
-    it.skip('should returns ', () => {
-
     });
   });
 });

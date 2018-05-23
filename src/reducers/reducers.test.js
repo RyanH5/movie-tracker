@@ -1,4 +1,4 @@
-import moviesReducer from "./moviesReducer";
+import {moviesReducer} from "./moviesReducer";
 import * as loginReducer from "./loginReducers"
 
 describe("reducers", () => {
@@ -25,20 +25,10 @@ describe("reducers", () => {
       });
 
       it("should update with an object of user data", () => {
-        const expectedState = {
-          id: 1,
-          email: 'email',
-          password: 'pass',
-          name: 'name'
-        }
+        const expectedState = {userId: 1}
         const mockAction = {
           type: 'USER_FETCH_SUCCESS',
-          user: {
-            id: 1,
-            email: 'email',
-            password: 'pass',
-            name: 'name'
-          }
+          userId: 1
         }
 
         expect(loginReducer.loginSuccess({} , mockAction)).toEqual(expectedState)

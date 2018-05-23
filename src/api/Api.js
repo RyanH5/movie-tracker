@@ -1,5 +1,5 @@
-import apiKey from '../../../apiKey';
-import { captureFavorites } from '../../../actions/movieActions/movieActions';
+import apiKey from '../apiKey.js';
+import { captureFavorites } from '../actions/movieActions/movieActions';
 
 export const fetchRecentMovies = async () => {
   try {

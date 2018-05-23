@@ -22,35 +22,39 @@ describe('LoginUser', () => {
     expect(wrapper.state()).toEqual(expected);
   });
 
-  // describe('handleSubmit', () => {
-  //   let mockUrl;
-  //   let mockData;
-  //   let mockEmail;
-  //   let mockPassword;
+  it('should have an initial state', () => {
+    expect(wrapper.state().password).toBe('');
+    expect(wrapper.state().email).toEqual('');
+  });
 
-  //   beforeEach(() => {
-  //     mockUrl = 'http://localhost:3000/api/users';
-  //     mockEmail= 'ok@mgmail.com';
-  //     mockPassword = '12345';
-  //     mockData = {
-  //       results:
-  //         [{status:"success", data:[{id:1, name:"Taylor", password:"password", email:"tman2272@aol.com"}]
-  //         }]
-  //     }
+  describe('handleSubmit', () => {
+    let mockUrl;
+    let mockData;
+    let mockEmail;
+    let mockPassword;
 
-  //     window.fetch = jest.fn().mockImplementation(() => {
-  //       return Promise.resolve({
-  //         status: 200,
-  //         json: () => Promise.resolve(mockData)
-  //       });
-  //     });
-  //   });
+    beforeEach(() => {
+      mockUrl = 'mockurl.com';
+      mockEmail= 'ok@mgmail.com';
+      mockPassword = '12345';
+      mockData = {
+        results:
+          [{status:"success", data:[{id:1, name:"Taylor", password:"password", email:"tman2272@aol.com"}]
+          }]
+      }
 
-  //   it('should call fetch with the correct params', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve(mockData)
+        });
+      });
+    });
 
-  //     fetchDatabase(mockUrl, mockEmail, mockPassword);
-  //     expect(fetchDatabase).toHaveBeenCalledWith(mockUrl, mockEmail, mockPassword);
-  //   });
-  // });
+    it('should call fetch with the correct params', () => {
+      const mockFetch = jest.fn()
+      fetchDatabase(mockUrl, mockEmail, mockPassword);
+      expect(mockFetch).toHaveBeenCalledWith(mockUrl, mockEmail, mockPassword);
+    });
+  });
 });
-

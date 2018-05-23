@@ -3,7 +3,7 @@ import { createNewUser, userCreateSuccess } from '../../../actions/createUserAct
 import { connect } from 'react-redux';
 import './CreateUser.css';
 
-class CreateUser extends Component {
+export class CreateUser extends Component {
   constructor () {
     super();
     this.state = {
