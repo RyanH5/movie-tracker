@@ -52,7 +52,10 @@ export class App extends Component {
 
 App.propTypes = {
   movies: PropTypes.array,
-  displayMovies: PropTypes.func
+  displayMovies: PropTypes.func,
+  userSignOut: PropTypes.func,
+  loginSuccess: PropTypes.object,
+  history: PropTypes.object
 };
 
 const mapStateToProps = state => ({

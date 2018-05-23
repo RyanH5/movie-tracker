@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Favorites extends Component {
   displayFavorites() {
@@ -11,7 +12,7 @@ class Favorites extends Component {
         <img src={`${movieImageRootUrl + movie.poster_path}`} alt={movie.title} />
         <p>Vote average: {movie.vote}</p>
       </article>
-    ))
+    ));
   }
 
   render() {
@@ -19,10 +20,13 @@ class Favorites extends Component {
       <div>
         {this.displayFavorites()}
       </div>
-    )
+    );
   }
 }
 
+Favorites.propTypes = {
+  favorites: PropTypes.arrayOf
+};
 
 export const mapStateToProps = state => ({
   favorites: state.favorites

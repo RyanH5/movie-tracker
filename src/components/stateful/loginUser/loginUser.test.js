@@ -1,41 +1,56 @@
-import { LoginUser, mapStateToProps, mapDispatchToProps} from './LoginUser';
+import React from 'react';
+import { LoginUser, mapStateToProps, mapDispatchToProps, handleChange } from './LoginUser';
+import { shallow, mount } from 'enzyme';
+import { fetchDatabase } from '../../../actions/loginActions';
 
 describe('LoginUser', () => {
-  // describe('LoginUser', () => {
-  // // snapshots
-  // // state changes
-  // // helpers
-  // });
+  let wrapper;
 
-  // describe('handleChange', () => {
+  beforeEach(() => {
+    wrapper = shallow(<LoginUser />);
+  });
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 
-  // });
+  it('should have the correct default state', () => {
+    const expected = {
+      password: '',
+      email: ''
+    };
+
+    expect(wrapper.state()).toEqual(expected);
+  });
 
   // describe('handleSubmit', () => {
+  //   let mockUrl;
+  //   let mockData;
+  //   let mockEmail;
+  //   let mockPassword;
 
+  //   beforeEach(() => {
+  //     mockUrl = 'http://localhost:3000/api/users';
+  //     mockEmail= 'ok@mgmail.com';
+  //     mockPassword = '12345';
+  //     mockData = {
+  //       results:
+  //         [{status:"success", data:[{id:1, name:"Taylor", password:"password", email:"tman2272@aol.com"}]
+  //         }]
+  //     }
+
+  //     window.fetch = jest.fn().mockImplementation(() => {
+  //       return Promise.resolve({
+  //         status: 200,
+  //         json: () => Promise.resolve(mockData)
+  //       });
+  //     });
+  //   });
+
+  //   it('should call fetch with the correct params', () => {
+
+  //     fetchDatabase(mockUrl, mockEmail, mockPassword);
+  //     expect(fetchDatabase).toHaveBeenCalledWith(mockUrl, mockEmail, mockPassword);
+  //   });
   // });
-
-  describe('mapStateToProps', () => {
-    it('should map the loginSuccess status to props', () => {
-      const mockedState = {
-        loginSuccess: false
-      };
-      const expected = {
-        loginSuccess: true
-      };
-      const mappedProps = mapStateToProps(mockedState);
-  
-      expected(mappedProps).toEqual(expected);
-    });
-  });
 });
-
-// import { AddTodoFrom, mapStateToProps, mapDispatchToProps } from './AddTodoForm';
-
-// describe('AddTodoFormContainer', () => {
-//   describe('component', () => {
-//     // snapshots
-//     // state changes
-//     // helpers
-//   });
 

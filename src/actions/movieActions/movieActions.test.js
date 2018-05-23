@@ -11,4 +11,15 @@ describe('Actions', () => {
       expect(actions.captureMovies(movies)).toEqual(expected);
     });
   });
+
+  describe('captureFavorites', () => {
+    it('return an action of type CAPTURE_FAVORITES', () => {
+      let favorites = [{}, {}, {}];
+      const expected = {
+        type: 'CAPTURE_FAVORITES',
+        favorites: favorites
+      };
+      expect(actions.captureFavorites(favorites)).toEqual(expected);
+    });
+  });
 });
