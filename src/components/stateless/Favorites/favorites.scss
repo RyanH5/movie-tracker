@@ -1,0 +1,12 @@
+.favorites-container  {
+  width: 80%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  .favorites-card {
+    margin: 0 1rem;
+  }
+}

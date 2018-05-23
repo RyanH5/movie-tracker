@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './favorites.css';
 
 class Favorites extends Component {
   displayFavorites() {
@@ -17,7 +18,7 @@ class Favorites extends Component {
 
   render() {
     return (
-      <div>
+      <div className="favorites-container d-flex">
         {this.displayFavorites()}
       </div>
     );
