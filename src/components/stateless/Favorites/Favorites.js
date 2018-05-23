@@ -19,7 +19,7 @@ class Favorites extends Component {
       <div>
         {this.displayFavorites()}
       </div>
-    )
+    );
   }
 }
 
