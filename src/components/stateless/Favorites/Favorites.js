@@ -19,6 +19,7 @@ class Favorites extends Component {
   render() {
     return (
       <div className="favorites-container d-flex">
+        <h2>Your Favorites</h2>
         {this.displayFavorites()}
       </div>
     );

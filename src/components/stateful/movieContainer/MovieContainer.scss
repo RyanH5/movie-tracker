@@ -15,7 +15,7 @@
     margin: 0 auto;
   }
   h3 {
-    font-family: 'Telex', sans-serif;;
+    font-family: 'Telex', sans-serif;
   }
 }
 
@@ -48,6 +48,11 @@
       &:active {
         border: 2px solid #fff;
         padding: 10px;
+      }
+      &.favorite {
+        background-color: #F2790F;
+        border: 1px solid black;
+        opacity: 1;
       }
     }
   }

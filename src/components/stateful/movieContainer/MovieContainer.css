@@ -4,59 +4,48 @@
 .movie-header-container {
   top: 146px;
   position: relative;
-  z-index: 1; 
-}
-
-.movie-header-container h2 {
-  width: 80%;
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 2rem;
-  margin: 0 auto; 
-}
-
-.movie-header-container h3 {
-  font-family: 'Telex', sans-serif; 
-}
-
-img { 
-  box-shadow: 3px 3px 2px black
-}
+  z-index: 1; }
+  .movie-header-container h2 {
+    width: 80%;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto; }
+  .movie-header-container h3 {
+    font-family: 'Telex', sans-serif; }
 
 .movie-container {
   width: 80%;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  background-color: #f2f2f2; 
-}
-
-.movie-container .movie-card {
-  margin: 0 1rem;
-  position: relative; 
-}
-
-.movie-container .movie-card button {
-  position: absolute;
-  padding: 12px;
-  opacity: .9;
-  border: none;
-  border-radius: 2px;
-  background-color: #8c0e03;
-  color: #fff;
-  right: 12px;
-  top: 70px;
-  -webkit-box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75);
-  -moz-box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75);
-  box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75); 
-}
-
-.movie-container .movie-card button:hover {
-  background-color: #bf2604;
-  opacity: 1; }
-.movie-container .movie-card button:active {
-  border: 2px solid #fff;
-  padding: 10px; }
+  background-color: #f2f2f2; }
+  .movie-container .movie-card {
+    margin: 0 1rem;
+    position: relative; }
+    .movie-container .movie-card button {
+      position: absolute;
+      padding: 12px;
+      opacity: .9;
+      border: none;
+      border-radius: 2px;
+      background-color: #8c0e03;
+      color: #fff;
+      right: 12px;
+      top: 70px;
+      -webkit-box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75);
+      -moz-box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75);
+      box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, 0.75); }
+      .movie-container .movie-card button:hover {
+        background-color: #bf2604;
+        opacity: 1; }
+      .movie-container .movie-card button:active {
+        border: 2px solid #fff;
+        padding: 10px; }
+      .movie-container .movie-card button.favorite {
+        background-color: #F2790F;
+        border: 1px solid black;
+        opacity: 1; }
 
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */

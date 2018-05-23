@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0733891-1aab-4e55-8f00-52b5c6620f48" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +40,8 @@
           <file leaf-file-name="Favorites.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+                <state relative-caret-position="357">
+                  <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -48,8 +52,8 @@
           <file leaf-file-name="favorites.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/stateless/Favorites/favorites.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+                <state relative-caret-position="255">
+                  <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -146,6 +150,9 @@
         <option value="$PROJECT_DIR$/src/components/stateful/api/Api.js" />
         <option value="$PROJECT_DIR$/src/components/stateless/app/App.js" />
         <option value="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/stateless/app/styles.scss" />
+        <option value="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.css" />
+        <option value="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.scss" />
         <option value="$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js" />
         <option value="$PROJECT_DIR$/src/components/stateless/Favorites/favorites.scss" />
       </list>
@@ -216,6 +223,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="stateless" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="stateless" type="462c0819:PsiDirectoryNode" />
               <item name="Favorites" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -259,12 +274,12 @@
       <updated>1526414395231</updated>
       <workItem from="1526414397003" duration="5133000" />
       <workItem from="1527045960883" duration="4637000" />
-      <workItem from="1527088013613" duration="26000" />
+      <workItem from="1527088013613" duration="999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23419000" />
+    <option name="totallyTimeSpent" value="24392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -303,27 +318,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="53" column="67" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/movieActions/movieActions.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -503,6 +497,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,10 +573,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateless/app/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="443" column="25" selection-start-line="443" selection-start-column="25" selection-end-line="443" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        <state relative-caret-position="357">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -588,8 +606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/stateless/Favorites/favorites.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="255">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
     </entry>

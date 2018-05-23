@@ -4,8 +4,12 @@
   flex-wrap: wrap;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 146px auto 0;
   background-color: #f2f2f2;
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
   .favorites-card {
     margin: 0 1rem;
   }
