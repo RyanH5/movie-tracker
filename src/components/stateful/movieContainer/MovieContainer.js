@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { cleanMovieData } from '../../../helpers';
-import { fetchRecentMovies, fetchFavorites, addFavorite } from '../api/Api';
+import { fetchRecentMovies, fetchFavorites, addFavorite } from '../../../api/Api';
 import { captureMovies, captureFavorites } from '../../../actions/movieActions/movieActions';
 import { connect } from 'react-redux';
 import './MovieContainer.css';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-class MovieContainer extends Component {
+export class MovieContainer extends Component {
 
   async componentDidMount () {
     let recentMovies = await fetchRecentMovies();
@@ -33,12 +33,12 @@ class MovieContainer extends Component {
           <button onClick={() => {
             const movie = this.props.movies[index];
             this.handleUserFavorites(movie);
-          }}>Favorite
-          </button>
+          }}>Favorite</button>
           <img src={`${movieImageRootUrl + movie.image}`} alt={movie.title} />
           <p>Vote Average: {movie.vote}</p>
         </article>
-      ));
+      )
+    );
   };
 
   render () {
