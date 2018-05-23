@@ -15,34 +15,17 @@ class MovieContainer extends Component {
     this.props.captureMovies(movieList);
   }
 
-  // toggleFavorite = async (movieId, userId) => {
-  //   if (this.props.userId) {
-  //     const favs = await fetchFavorites(this.props.userId);
-  //     this.props.favorites.some(favorite => {
-  //       return favorite.movieId === movie_id;
-  //     });
-  //   }
-  // }
-
   handleUserFavorites = async (movie) => {
     if (Object.keys(this.props.loginSuccess).length === 0) {
       alert('Please create an account in order to add favorites');
     } else {
-      // this.toggleFavorite(movieId);
       this.props.captureFavorites(movie);
       addFavorite(movie, this.props.userId);
-
-      // const storedMovie = await addFavorite(movieId, userId)
-
-      // fetch post
     }
   };
 
   displayMovies = () => {
     const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
-    const movies = this.props.location.pathname === '/favorites' ?
-      this.props.favorites :
-      this.props.movies;
     return this.props.movies.map((movie, index) =>
       (
         <article className="movie-card" key={`key${index}`}>
@@ -69,12 +52,6 @@ class MovieContainer extends Component {
   }
 }
 
-// MainContainer.propTypes = {
-//   categoryData: PropTypes.array,
-//   addFavorite: PropTypes.func,
-//   favorites: PropTypes.array,
-//   currentCategory: PropTypes.string
-// };
 MovieContainer.propTypes = {
   movies: PropTypes.array
 
