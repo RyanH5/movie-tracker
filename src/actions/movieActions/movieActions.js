@@ -11,3 +11,5 @@ export const captureFavorites = favorites => (
     favorites
   }
 );  
+
+
