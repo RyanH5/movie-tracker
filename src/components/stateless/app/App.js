@@ -32,10 +32,13 @@ export class App extends Component {
                   <li><NavLink to="/login" className="login">Login</NavLink></li>
                 }
                 {
+                  !userLoggedInStatus &&
+                  <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
+                }
+                {
                   userLoggedInStatus &&
                   <li><NavLink to="/" className="home" onClick={this.handleLogout}>Logout</NavLink></li>
                 }
-                <li><NavLink to="/createUser" className="create-user">Create User</NavLink></li>
                 <li><NavLink to={favoritesPath} className="favorites">Favorites</NavLink></li>
               </ul>
             </nav>
