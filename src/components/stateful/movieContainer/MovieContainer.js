@@ -5,6 +5,7 @@ import { captureMovies, captureFavorites } from '../../../actions/movieActions/m
 import { connect } from 'react-redux';
 import './MovieContainer.css';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 class MovieContainer extends Component {
@@ -17,7 +18,7 @@ class MovieContainer extends Component {
 
   toggleFavorite = async (movie_id, userId) => {
     console.log(this.props.userId);
-    if(this.props.loginSuccess.userId) {
+    if(this.props.userId) {
       const favs = await fetchFavorites(this.props.userId);
       console.log(favs);
       this.props.favorites.some(favorite => {
@@ -30,7 +31,7 @@ class MovieContainer extends Component {
     if (Object.keys(this.props.loginSuccess).length === 0) {
       alert('Please create an account in order to add favorites');
     } else {
-      this.toggleFavorite(movie_id, userId);
+      this.toggleFavorite(movie_id, this.props.userId);
       // fetch post
     }
   };
@@ -62,7 +63,16 @@ class MovieContainer extends Component {
   }
 }
 
-MovieContainer.propTypes = {};
+// MainContainer.propTypes = {
+//   categoryData: PropTypes.array,
+//   addFavorite: PropTypes.func,
+//   favorites: PropTypes.array,
+//   currentCategory: PropTypes.string
+// };
+MovieContainer.propTypes = {
+  movies: PropTypes.array,
+
+};
 
 export const mapStateToProps = state => ({
   movies: state.movies,
