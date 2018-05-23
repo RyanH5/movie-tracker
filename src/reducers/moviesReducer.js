@@ -11,7 +11,7 @@ export const moviesReducer = (state = [], action) => {
 export const favoritesReducer = (state = [], action) => {
   switch (action.type) {
     case 'CAPTURE_FAVORITES':
-      return [...state, action.favorites.id];
+      return [...state, action.favorites];
 
     default:
       return state;

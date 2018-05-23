@@ -14,20 +14,30 @@ export const fetchRecentMovies = async () => {
 
 export const addFavorite = async (movie, userId) => {
   try {
-    const favoritesUrl = `http://localhost:3000/api/users/favorites/new`;
+    const favoritesUrl = 'http://localhost:3000/api/users/favorites/new';
     const options = {
       method: 'POST',
-      body: JSON.stringify({
-        ...movie,
-        userId
-      })
+      body: JSON.stringify(
+        {
+          movie_id: movie.id,
+          user_id: userId,
+          title: movie.title,
+          poster_path: movie.poster,
+          release_date: movie.releaseDate,
+          vote_average: movie.vote,
+          overview: movie.overview
+        }
+      ),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     };
     const response = await fetch(favoritesUrl, options);
     if (!response.ok) {
       throw Error(`${response.status}`);
     }
 
-    return response;
+    return response.id;
   } catch (error) {
     throw new Error(`Failed to fetch. (error: ${error.message})`);
   }

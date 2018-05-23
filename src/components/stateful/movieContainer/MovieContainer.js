@@ -15,21 +15,25 @@ class MovieContainer extends Component {
     this.props.captureMovies(movieList);
   }
 
-  toggleFavorite = async (movie_id, userId) => {
-    if(this.props.userId) {
-      const favs = await fetchFavorites(this.props.userId);
-      this.props.favorites.some(favorite => {
-        return favorite.movieId === movie_id;
-      });
-    }
-  }
+  // toggleFavorite = async (movieId, userId) => {
+  //   if (this.props.userId) {
+  //     const favs = await fetchFavorites(this.props.userId);
+  //     this.props.favorites.some(favorite => {
+  //       return favorite.movieId === movie_id;
+  //     });
+  //   }
+  // }
 
-  handleUserFavorites = (movieId) => {
+  handleUserFavorites = async (movie) => {
     if (Object.keys(this.props.loginSuccess).length === 0) {
       alert('Please create an account in order to add favorites');
     } else {
-      // this.toggleFavorite(movie);
-      this.props.captureFavorites(movieId)
+      // this.toggleFavorite(movieId);
+      this.props.captureFavorites(movie);
+      addFavorite(movie, this.props.userId);
+
+      // const storedMovie = await addFavorite(movieId, userId)
+
       // fetch post
     }
   };
@@ -44,8 +48,8 @@ class MovieContainer extends Component {
         <article className="movie-card" key={`key${index}`}>
           <h3>{movie.title}</h3>
           <button onClick={() => {
-            const id = this.props.movies[index]
-            this.handleUserFavorites(id)}}>Favorite</button>
+            const movie = this.props.movies[index];
+            this.handleUserFavorites(movie)}}>Favorite</button>
           <img src={`${movieImageRootUrl + movie.image}`} alt={movie.title} />
           <p>Vote Average: {movie.vote}</p>
         </article>
