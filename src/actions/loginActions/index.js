@@ -35,7 +35,7 @@ export const fetchDatabase = (url, email, password) => {
       dispatch(fetchIsLoading(false));
       const userData = await response.json();
       const user = userData.data;
-      dispatch(userFetchSuccess(user.id));
+      await dispatch(userFetchSuccess(user.id));
     } catch (error) {
       dispatch(fetchErrored(true));
       dispatch(fetchIsLoading(false)); 

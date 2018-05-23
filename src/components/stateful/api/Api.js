@@ -44,18 +44,9 @@ export const addFavorite = async (movie, userId) => {
   }
 };
 
-export const fetchFavorites = (userId) => {
-  return async (dispatch) => {
-    try {
-      const favoritesUrl = `http://localhost:3000/api/users/${userId}/favorites`;
-      const response = await fetch(favoritesUrl);
-      if (response.ok) {
-        const favoritesList = await response.json();
-        dispatch(captureFavorites(favoritesList));
-        return favoritesList;
-      }
-    } catch (error) {
-      throw new Error(`error: ${error.message}`);
-    }
-  };
+export const fetchFavorites = async (userId) => {
+  const favoritesUrl = `http://localhost:3000/api/users/${userId}/favorites`;
+  const response = await fetch(favoritesUrl);
+  const favoritesList = await response.json();
+  return favoritesList.data;
 };

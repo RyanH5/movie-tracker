@@ -40,8 +40,8 @@ class MovieContainer extends Component {
 
   displayMovies = () => {
     const movieImageRootUrl = 'https://image.tmdb.org/t/p/w500';
-    const movies = this.props.location.pathname === '/favorites' ? 
-      this.props.favorites : 
+    const movies = this.props.location.pathname === '/favorites' ?
+      this.props.favorites :
       this.props.movies;
     return this.props.movies.map((movie, index) =>
       (
@@ -49,7 +49,9 @@ class MovieContainer extends Component {
           <h3>{movie.title}</h3>
           <button onClick={() => {
             const movie = this.props.movies[index];
-            this.handleUserFavorites(movie)}}>Favorite</button>
+            this.handleUserFavorites(movie);
+          }}>Favorite
+          </button>
           <img src={`${movieImageRootUrl + movie.image}`} alt={movie.title} />
           <p>Vote Average: {movie.vote}</p>
         </article>
@@ -61,7 +63,8 @@ class MovieContainer extends Component {
       <div className="movie-header-container"><h2>Choose Your Favorites</h2>
         <div className="movie-container d-flex">
           {this.displayMovies()}
-        </div></div>
+        </div>
+      </div>
     );
   }
 }
@@ -73,7 +76,7 @@ class MovieContainer extends Component {
 //   currentCategory: PropTypes.string
 // };
 MovieContainer.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.array
 
 };
 
@@ -86,8 +89,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   captureMovies: movies => dispatch(captureMovies(movies)),
-  captureFavorites: favorites => dispatch(captureFavorites(favorites)),
-  
+  captureFavorites: favorites => dispatch(captureFavorites(favorites))
 
 });
 
