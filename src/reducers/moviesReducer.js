@@ -1,4 +1,4 @@
-const moviesReducer = (state = [], action) => {
+export const moviesReducer = (state = [], action) => {
   switch (action.type) {
     case 'CAPTURE_MOVIES':
       return [...action.movies];
@@ -8,4 +8,14 @@ const moviesReducer = (state = [], action) => {
   }
 };
 
-export default moviesReducer
+export const favoritesReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'CAPTURE_FAVORITES':
+      return [...action.favorites];
+
+    default:
+      return state;
+  }
+};
+
+

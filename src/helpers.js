@@ -7,6 +7,6 @@ export const cleanMovieData = (movieData) => movieData.map((movie, index) => {
     releaseDate: movie.release_date,
     vote: movie.vote_average,
     overview: movie.overview,
-    id: index
+    id: movie.id
   };
 });
