@@ -44,7 +44,7 @@ export class App extends Component {
         <Route exact path='/' component={MovieContainer} />
         <Route exact path='/login' component={LoginUser} />
         <Route exact path='/createUser' component={CreateUser} />
-        <Route exact path='/favorites' component={MovieContainer} />
+        <Route exact path='/favorites' component={Favorites} />
       </div>
     );
   }
@@ -52,7 +52,10 @@ export class App extends Component {
 
 App.propTypes = {
   movies: PropTypes.array,
-  displayMovies: PropTypes.func
+  displayMovies: PropTypes.func,
+  userSignOut: PropTypes.func,
+  loginSuccess: PropTypes.object,
+  history: PropTypes.object
 };
 
 const mapStateToProps = state => ({
