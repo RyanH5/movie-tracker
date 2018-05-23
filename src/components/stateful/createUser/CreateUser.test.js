@@ -7,16 +7,15 @@ import { Provider } from 'react-redux';
 describe('CreateUser', () => {
   let wrapper;
 
-  it('should match the snapshot', () => {
+  beforeEach(() => {
     wrapper = shallow(<CreateUser />);
-  
+  });
+  it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
   it('should have an initial state', () => {
     expect(wrapper.state().name).toBe('');
     expect(wrapper.state().password).toBe('');
     expect(wrapper.state().email).toEqual('');
   });
 });
-
