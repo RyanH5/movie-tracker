@@ -16,3 +16,9 @@ Krista Handel
 
 ## Screenshots
 
+![screenshot-2018-5-23 movie tracker](https://user-images.githubusercontent.com/8752377/40436811-087580d4-5e71-11e8-9956-02bc0e803e28.jpg)
+
+![screenshot-2018-5-23 movie tracker](https://user-images.githubusercontent.com/8752377/40436810-0862e0be-5e71-11e8-9ad4-aca36a8afdb1.png)
+
+![screenshot-2018-5-23 movie tracker 1](https://user-images.githubusercontent.com/8752377/40436809-084ecdf4-5e71-11e8-86d3-40e4d3374add.png)
+
