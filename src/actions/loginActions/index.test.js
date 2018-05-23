@@ -72,17 +72,17 @@ describe("Login Actions", () => {
       });
   
       const expected = ['www.ok.com', {
-          method: 'POST',
-          body: JSON.stringify(
-            {
-              password: mockPassword,
-              email: mockEmail
-            }
-          ),
-          headers: {
-            'Content-Type': 'application/json'
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            password: mockPassword,
+            email: mockEmail
           }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
         }
+      }
       ];
 
       const thunk = fetchDatabase(mockUrl, mockEmail, mockPassword);

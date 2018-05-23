@@ -1,0 +1,475 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginUser should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginUser />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="login-user-form-wrapper"
+>
+        <form
+                onSubmit={[Function]}
+        >
+                <span
+                        className=""
+                >
+                        Login User
+                </span>
+                <div
+                        className="wrap-input top"
+                >
+                        <input
+                                name="email"
+                                onChange={[Function]}
+                                placeholder="ex. example@gmail.com"
+                                type="text"
+                                value=""
+                        />
+                </div>
+                <div
+                        className="wrap-input"
+                >
+                        <input
+                                name="password"
+                                onChange={[Function]}
+                                placeholder="password"
+                                type="text"
+                                value=""
+                        />
+                </div>
+                <button>
+                        LOG-IN
+                </button>
+        </form>
+</div>,
+      "className": "login-user-container d-flex",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <form
+          onSubmit={[Function]}
+>
+          <span
+                    className=""
+          >
+                    Login User
+          </span>
+          <div
+                    className="wrap-input top"
+          >
+                    <input
+                              name="email"
+                              onChange={[Function]}
+                              placeholder="ex. example@gmail.com"
+                              type="text"
+                              value=""
+                    />
+          </div>
+          <div
+                    className="wrap-input"
+          >
+                    <input
+                              name="password"
+                              onChange={[Function]}
+                              placeholder="password"
+                              type="text"
+                              value=""
+                    />
+          </div>
+          <button>
+                    LOG-IN
+          </button>
+</form>,
+        "className": "login-user-form-wrapper",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className=""
+>
+              Login User
+</span>,
+            undefined,
+            <div
+              className="wrap-input top"
+>
+              <input
+                            name="email"
+                            onChange={[Function]}
+                            placeholder="ex. example@gmail.com"
+                            type="text"
+                            value=""
+              />
+</div>,
+            <div
+              className="wrap-input"
+>
+              <input
+                            name="password"
+                            onChange={[Function]}
+                            placeholder="password"
+                            type="text"
+                            value=""
+              />
+</div>,
+            <button>
+              LOG-IN
+</button>,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Login User",
+              "className": "",
+            },
+            "ref": null,
+            "rendered": "Login User",
+            "type": "span",
+          },
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <input
+                name="email"
+                onChange={[Function]}
+                placeholder="ex. example@gmail.com"
+                type="text"
+                value=""
+/>,
+              "className": "wrap-input top",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "name": "email",
+                "onChange": [Function],
+                "placeholder": "ex. example@gmail.com",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <input
+                name="password"
+                onChange={[Function]}
+                placeholder="password"
+                type="text"
+                value=""
+/>,
+              "className": "wrap-input",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "name": "password",
+                "onChange": [Function],
+                "placeholder": "password",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "LOG-IN",
+            },
+            "ref": null,
+            "rendered": "LOG-IN",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="login-user-form-wrapper"
+>
+          <form
+                    onSubmit={[Function]}
+          >
+                    <span
+                              className=""
+                    >
+                              Login User
+                    </span>
+                    <div
+                              className="wrap-input top"
+                    >
+                              <input
+                                        name="email"
+                                        onChange={[Function]}
+                                        placeholder="ex. example@gmail.com"
+                                        type="text"
+                                        value=""
+                              />
+                    </div>
+                    <div
+                              className="wrap-input"
+                    >
+                              <input
+                                        name="password"
+                                        onChange={[Function]}
+                                        placeholder="password"
+                                        type="text"
+                                        value=""
+                              />
+                    </div>
+                    <button>
+                              LOG-IN
+                    </button>
+          </form>
+</div>,
+        "className": "login-user-container d-flex",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[Function]}
+>
+            <span
+                        className=""
+            >
+                        Login User
+            </span>
+            <div
+                        className="wrap-input top"
+            >
+                        <input
+                                    name="email"
+                                    onChange={[Function]}
+                                    placeholder="ex. example@gmail.com"
+                                    type="text"
+                                    value=""
+                        />
+            </div>
+            <div
+                        className="wrap-input"
+            >
+                        <input
+                                    name="password"
+                                    onChange={[Function]}
+                                    placeholder="password"
+                                    type="text"
+                                    value=""
+                        />
+            </div>
+            <button>
+                        LOG-IN
+            </button>
+</form>,
+          "className": "login-user-form-wrapper",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className=""
+>
+                Login User
+</span>,
+              undefined,
+              <div
+                className="wrap-input top"
+>
+                <input
+                                name="email"
+                                onChange={[Function]}
+                                placeholder="ex. example@gmail.com"
+                                type="text"
+                                value=""
+                />
+</div>,
+              <div
+                className="wrap-input"
+>
+                <input
+                                name="password"
+                                onChange={[Function]}
+                                placeholder="password"
+                                type="text"
+                                value=""
+                />
+</div>,
+              <button>
+                LOG-IN
+</button>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Login User",
+                "className": "",
+              },
+              "ref": null,
+              "rendered": "Login User",
+              "type": "span",
+            },
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <input
+                  name="email"
+                  onChange={[Function]}
+                  placeholder="ex. example@gmail.com"
+                  type="text"
+                  value=""
+/>,
+                "className": "wrap-input top",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "name": "email",
+                  "onChange": [Function],
+                  "placeholder": "ex. example@gmail.com",
+                  "type": "text",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <input
+                  name="password"
+                  onChange={[Function]}
+                  placeholder="password"
+                  type="text"
+                  value=""
+/>,
+                "className": "wrap-input",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "name": "password",
+                  "onChange": [Function],
+                  "placeholder": "password",
+                  "type": "text",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "LOG-IN",
+              },
+              "ref": null,
+              "rendered": "LOG-IN",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

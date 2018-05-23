@@ -7,7 +7,7 @@ import { fetchFavorites } from '../api/Api';
 import './LoginUser.css';
 import { captureFavorites } from '../../../actions/movieActions/movieActions';
 
-class LoginUser extends Component {
+export class LoginUser extends Component {
   constructor () {
     super();
     this.state = {
