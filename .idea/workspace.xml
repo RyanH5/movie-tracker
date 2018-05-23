@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0733891-1aab-4e55-8f00-52b5c6620f48" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/loginActions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/loginActions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stateful/api/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/api/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stateful/loginUser/LoginUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/loginUser/LoginUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stateless/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stateless/app/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,13 +21,37 @@
     <splitter split-orientation="horizontal" split-proportion="0.47829083">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Api.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Api.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="826">
-                  <caret line="51" column="2" selection-start-line="51" selection-start-column="2" selection-end-line="51" selection-end-column="2" />
+                <state relative-caret-position="605">
+                  <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#37#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Favorites.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/stateless/app/App.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="667">
+                  <caret line="46" column="59" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -39,23 +61,23 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="LoginUser.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/stateful/loginUser/LoginUser.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="29" selection-start-line="29" selection-end-line="29" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/actions/loginActions/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="629">
                   <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MovieContainer.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="741">
+                  <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -80,6 +102,7 @@
       <find>fetchRecentMovies</find>
       <find>fetchFavorites</find>
       <find>fetchDatabase</find>
+      <find>movieImageRootUrl</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -109,11 +132,12 @@
         <option value="$PROJECT_DIR$/src/components/stateful/api/Api.test.js" />
         <option value="$PROJECT_DIR$/src/components/stateful/app/App.js" />
         <option value="$PROJECT_DIR$/src/components/stateful/app/App.test.js" />
-        <option value="$PROJECT_DIR$/src/components/stateless/app/App.js" />
-        <option value="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js" />
         <option value="$PROJECT_DIR$/src/actions/loginActions/index.js" />
         <option value="$PROJECT_DIR$/src/components/stateful/loginUser/LoginUser.js" />
         <option value="$PROJECT_DIR$/src/components/stateful/api/Api.js" />
+        <option value="$PROJECT_DIR$/src/components/stateless/app/App.js" />
+        <option value="$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js" />
       </list>
     </option>
   </component>
@@ -160,14 +184,37 @@
               <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
               <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
               <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-              <item name="loginActions" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="stateful" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="stateless" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="stateless" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie-tracker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie-tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="stateless" type="462c0819:PsiDirectoryNode" />
+              <item name="Favorites" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,18 +256,18 @@
       <option name="presentableId" value="Default" />
       <updated>1526414395231</updated>
       <workItem from="1526414397003" duration="5133000" />
-      <workItem from="1527045960883" duration="2443000" />
+      <workItem from="1527045960883" duration="4637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20698000" />
+    <option name="totallyTimeSpent" value="22892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12537673" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.12537673" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
@@ -253,7 +300,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.css" />
     <entry file="file://$PROJECT_DIR$/src/components/stateful/app/App.test.js" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -443,13 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/apiKey.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -489,34 +528,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/stateless/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/movieActions/movieActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/loginActions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -532,10 +547,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/stateful/api/Api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
-          <caret line="51" column="2" selection-start-line="51" selection-start-column="2" selection-end-line="51" selection-end-column="2" />
+        <state relative-caret-position="605">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateless/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="46" column="59" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/loginActions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateful/movieContainer/MovieContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/stateless/Favorites/Favorites.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

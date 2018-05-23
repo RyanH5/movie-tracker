@@ -44,7 +44,7 @@ export class App extends Component {
         <Route exact path='/' component={MovieContainer} />
         <Route exact path='/login' component={LoginUser} />
         <Route exact path='/createUser' component={CreateUser} />
-        <Route exact path='/favorites' component={MovieContainer} />
+        <Route exact path='/favorites' component={Favorites} />
       </div>
     );
   }
