@@ -14,7 +14,7 @@ export const fetchRecentMovies = async () => {
 
 export const addFavorite = async (movie, userId) => {
   try {
-    const favoritesUrl = 'http://localhost:3000/api/users/:user_id/favorites';
+    const favoritesUrl = `http://localhost:3000/api/users/favorites/new`;
     const options = {
       method: 'POST',
       body: JSON.stringify({
@@ -22,7 +22,7 @@ export const addFavorite = async (movie, userId) => {
         userId
       })
     };
-    const response = await fetch(favoritesUrl, options); 
+    const response = await fetch(favoritesUrl, options);
     if (!response.ok) {
       throw Error(`${response.status}`);
     }
@@ -33,16 +33,16 @@ export const addFavorite = async (movie, userId) => {
   }
 };
 
-export const fetchFavorites = async () => {
+export const fetchFavorites = async (userId) => {
   try {
-    const favoritesUrl = 'http://localhost:3000/api/users/`${userId}`/favorites';
+    const favoritesUrl = `http://localhost:3000/api/users/${userId}/favorites`;
     const response = await fetch(favoritesUrl);
-    const favoritesList = response.json();
-    console.log(favoritesList);
-    if(!response.ok) {
-      throw Error(`${response.status}`)
+    if (response.ok) {
+      const favoritesList = response.json();
+      return favoritesList;
     }
+    throw Error(`${response.status}`);
   } catch (error) {
-    throw new Error(`error: ${error.message}`)
+    throw new Error(`error: ${error.message}`);
   }
 };

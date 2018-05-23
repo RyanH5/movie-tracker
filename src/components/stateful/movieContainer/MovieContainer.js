@@ -15,20 +15,22 @@ class MovieContainer extends Component {
     this.props.captureMovies(movieList);
   }
 
-  toggleFavorite = (movie_id) => {
-    if(this.props.loginSuccess === {}) {
-      fetchFavorites()
+  toggleFavorite = async (movie_id, userId) => {
+    console.log(this.props.userId);
+    if(this.props.loginSuccess.userId) {
+      const favs = await fetchFavorites(this.props.userId);
+      console.log(favs);
       this.props.favorites.some(favorite => {
         return favorite.movieId === movie_id;
-      })
+      });
     }
   }
 
-  handleUserFavorites = (movie_id) => {
+  handleUserFavorites = (movie_id, userId) => {
     if (Object.keys(this.props.loginSuccess).length === 0) {
       alert('Please create an account in order to add favorites');
     } else {
-      this.toggleFavorite(movie_id);
+      this.toggleFavorite(movie_id, userId);
       // fetch post
     }
   };
@@ -65,7 +67,8 @@ MovieContainer.propTypes = {};
 export const mapStateToProps = state => ({
   movies: state.movies,
   loginSuccess: state.loginSuccess,
-  favorites: state.favorites
+  favorites: state.favorites,
+  userId: state.loginSuccess.userId
 });
 
 export const mapDispatchToProps = dispatch => ({
