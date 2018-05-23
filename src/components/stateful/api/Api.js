@@ -1,4 +1,5 @@
 import apiKey from '../../../apiKey';
+import { captureFavorites } from '../../../actions/movieActions/movieActions';
 
 export const fetchRecentMovies = async () => {
   try {
@@ -43,16 +44,18 @@ export const addFavorite = async (movie, userId) => {
   }
 };
 
-export const fetchFavorites = async (userId) => {
-  try {
-    const favoritesUrl = `http://localhost:3000/api/users/${userId}/favorites`;
-    const response = await fetch(favoritesUrl);
-    if (response.ok) {
-      const favoritesList = response.json();
-      return favoritesList;
+export const fetchFavorites = (userId) => {
+  return async (dispatch) => {
+    try {
+      const favoritesUrl = `http://localhost:3000/api/users/${userId}/favorites`;
+      const response = await fetch(favoritesUrl);
+      if (response.ok) {
+        const favoritesList = await response.json();
+        dispatch(captureFavorites(favoritesList));
+        return favoritesList;
+      }
+    } catch (error) {
+      throw new Error(`error: ${error.message}`);
     }
-    throw Error(`${response.status}`);
-  } catch (error) {
-    throw new Error(`error: ${error.message}`);
-  }
+  };
 };

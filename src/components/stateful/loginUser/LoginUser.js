@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchDatabase } from '../../../actions/loginActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { fetchFavorites } from '../api/Api';
 
 import './LoginUser.css'
 
@@ -19,11 +20,13 @@ class LoginUser extends Component {
     this.setState({[name]: value});
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
+    // debugger;
     event.preventDefault();
     const url = 'http://localhost:3000/api/users';
-    this.props.fetchDatabase(url, this.state.email, this.state.password);
+    await this.props.fetchDatabase(url, this.state.email, this.state.password);
     if (this.props.loginSuccess) {
+      await fetchFavorites(this.props.loginSuccess.userId);
       this.props.history.push('/')
     }
   };
